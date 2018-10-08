@@ -30,25 +30,34 @@ include 'sidebar.php' ;
                 </div>
                 <div class="card-body">
                     <div class="card-block">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Number</th>
-                                    <th>Username</th>
-                                    <th>Quantity</th>
-                                    <th>Amount</th>
+                        <?php
+                                $con =mysqli_connect("localhost","root","root","gendrug");
+                                $query=mysqli_query($con, "select * from orderdetails") or die(mysqli_error($con));
+                          echo"<table class='table'>";
+                           echo" <thead>";
+                             
+                                echo"<tr>";
+                                echo"<th>Number</th>";
+                                echo"<th>Order Quantity</th>";
+                                echo"<th>Order Amount</th>";   
+                                echo"</tr>";
+                            echo"</thead>";
+                          
+                            echo"<tbody>";
+                              while ($row= mysqli_fetch_array($query))
+                                { 
+                               echo"<tr class='table-primary'>";
+                                    echo"<th scope='row'>{$row['Order_id']}</th>";
+                                    echo"<td>{$row['Order_quantity']}</td>";
+                                    echo"<td>{$row['Order_amount']}</td>";   
+                                echo"</tr>";
+                                }
+                                
+                           echo" </tbody>";
+                                       
                                     
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="table-primary">
-                                    <th scope="row">1</th>
-                                    <td>...</td>
-                                    <td>...</td>
-                                    <td>...</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                          echo"</table>";
+                          ?>
 <!-- to add dark grey color in table rows, use class="table-dark", for blue use class="Primary", for medium gray use class="Secondary", for green use class="success", for pink use class="Danger", for light orange use class="Warning", for skyblue use class="Info", and for white and grayish use class="Light" and "Dark" respectively. -->
                     </div>
                 </div>

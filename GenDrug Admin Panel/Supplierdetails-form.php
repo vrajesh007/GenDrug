@@ -1,3 +1,23 @@
+<?php
+$con =mysqli_connect("localhost","root","root","gendrug");
+if($_POST)
+    {
+$a=$_POST['suppliername'];
+$b=$_POST['supplieraddress'];
+$c=$_POST['supplierphonenumber'];
+$d=$_POST['supplierstock'];
+$insert=mysqli_query($con,"INSERT INTO supplierdetails(Supp_id,Supp_name,Supp_add,Supp_phnum,Supp_stock) VALUES ('','{$a}','{$b}','{$c}','{$d}')") or die("Error" .mysqli_error($con));
+if($insert)
+{
+	echo "<script> alert('Record inserted'); </script>";
+}
+else 
+{
+	echo "ERROR!!";
+}
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en" class="loading">
   
@@ -47,8 +67,13 @@ include 'header.php';
 								                </div>
                                                                             
                                                                                 <div class="form-group">
-											<label for="eventInput3">Supplier Medicine's Stock</label>
-											<input type="number" id="eventInput3" class="form-control" name="supplierstock" >
+											<label for="eventInput3">Supplier's Phone Number</label>
+											<input type="number" id="eventInput3" class="form-control" name="supplierphonenumber" >
+										</div>
+                                                                            
+                                                                                <div class="form-group">
+											<label for="eventInput4">Supplier Medicine's Stock</label>
+											<input type="number" id="eventInput4" class="form-control" name="supplierstock" >
 										</div>
                                                                                 
 
@@ -62,8 +87,8 @@ include 'header.php';
 								<button type="button" class="btn btn-raised btn-warning mr-1" name="cancel">
 									<i class="ft-x"></i> Cancel
 								</button>
-								<button type="button" class="btn btn-raised btn-primary"  name="save">
-									<i class="fa fa-check-square-o"></i> Save
+								<button type="submit" class="btn btn-raised btn-primary"  name="submit" value='submit'>
+									<i class="fa fa-check-square-o"></i> Submit
 								</button>
 							</div>
 						</form>	

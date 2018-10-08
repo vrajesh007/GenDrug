@@ -30,35 +30,47 @@ include 'sidebar.php' ;
                 </div>
                 <div class="card-body">
                     <div class="card-block">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Number</th>
-                                    <th>Name</th>
-                                    <th>Gender</th>
-                                    <th>Phone Number</th>
-                                    <th>Email</th>
-                                    <th>Password</th>
-                                    <th>Confirm Password</th>
-                                    <th>Address</th>
+                        <?php
+                                $con =mysqli_connect("localhost","root","root","gendrug");
+                                $query=mysqli_query($con, "select * from userregistration") or die(mysqli_error($con));
+                          echo"<table class='table'>";
+                           echo" <thead>";
+                             
+                                echo"<tr>";
+                                echo"<th>Number</th>";
+                                echo"<th>Name</th>";
+                                echo"<th>Gender</th>";
+                                echo"<th>Phone Number</th>";
+                                echo"<th>Email</th>";
+                                echo"<th>Password</th>";
+                                echo"<th>Confirm Password</th>";
+                                echo"<th>Address</th>";
                                     
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="table-primary">
-                                    <th scope="row">1</th>
-                                    <td>...</td>
-                                    <td>...</td>
-                                    <td>...</td>
-                                    <td>...</td>
-                                    <td>...</td>
-                                    <td>...</td>
-                                    <td>...</td>
+                                echo"</tr>";
+                            echo"</thead>";
+                          
+                            echo"<tbody>";
+                              while ($row= mysqli_fetch_array($query))
+                                { 
+                               echo"<tr class='table-primary'>";
+                                    echo"<th scope='row'>{$row['U_id']}</th>";
+                                    echo"<td>{$row['U_name']}</td>";
+                                    echo"<td>{$row['Gender']}</td>";
+                                    echo"<td>{$row['Phonenum']}</td>";
+                                    echo"<td>{$row['Email']}</td>";
+                                    echo"<td>{$row['Password']}</td>";
+                                    echo"<td>{$row['Conpassword']}</td>";
+                                    echo"<td>{$row['Address']}</td>";
                                     
-                                </tr>
-                            </tbody>
-                        </table>
-<!-- to add dark grey color in table rows, use class="table-dark", for blue use class="Primary", for medium gray use class="Secondary", for green use class="success", for pink use class="Danger", for light orange use class="Warning", for skyblue use class="Info", and for white and grayish use class="Light" and "Dark" respectively. -->
+                                echo"</tr>";
+                                }
+                                
+                           echo" </tbody>";
+                                       
+                                    
+                          echo"</table>";
+                          ?>
+                                    <!-- to add dark grey color in table rows, use class="table-dark", for blue use class="Primary", for medium gray use class="Secondary", for green use class="success", for pink use class="Danger", for light orange use class="Warning", for skyblue use class="Info", and for white and grayish use class="Light" and "Dark" respectively. -->
                     </div>
                 </div>
             </div>

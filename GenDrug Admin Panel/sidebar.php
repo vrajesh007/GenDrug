@@ -1,6 +1,6 @@
 <div class="wrapper">
       <!-- main menu-->
-      <div data-active-color="white" data-background-color="man-of-steel" data-image="app-assets/img/sidebar-bg/01.jpg" class="app-sidebar">
+      <div data-active-color="white" data-background-color="flickr" data-image="img/sidebar-bg/01.jpg" class="app-sidebar">
         <!-- main menu header-->
         <!-- Sidebar Header starts-->
         <div class="sidebar-header">
@@ -35,7 +35,7 @@
                   </li>
                   <li><a href="Symptomdetails-form.php" class="menu-item">Symptom Details</a>
                   </li>
-                  <li><a href="Prescriptiondetails-form.php" class="menu-item">Prescription Details/a>
+                  <li><a href="Prescriptiondetails-form.php" class="menu-item">Prescription Details</a>
                   </li>
                   <li><a href="Supplierdetails-form.php" class="menu-item">Supplier Details</a>
                   </li>
@@ -87,3 +87,4 @@
         <!-- include includes/menu-footer-->
         <!-- main menu footer-->
       </div>
+      

@@ -1,3 +1,22 @@
+<?php
+$con =mysqli_connect("localhost","root","root","gendrug");
+if($_POST)
+    {
+$a=$_POST['prescribedname'];
+$b=$_POST['prescribeddetails'];
+$c=$_POST['price'];
+$insert=mysqli_query($con,"INSERT INTO prescriptiondetails(Pres_id,Pres_name,Pres_details,Pres_price) VALUES ('','{$a}','{$b}','{$c}')") or die("Error" .mysqli_error($con));
+if($insert)
+{
+	echo "<script> alert('Record inserted'); </script>";
+}
+else 
+{
+	echo "ERROR!!";
+}
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en" class="loading">
   
@@ -62,8 +81,8 @@ include 'header.php';
 								<button type="button" class="btn btn-raised btn-warning mr-1" name="cancel">
 									<i class="ft-x"></i> Cancel
 								</button>
-								<button type="button" class="btn btn-raised btn-primary"  name="save">
-									<i class="fa fa-check-square-o"></i> Save
+								<button type="submit" class="btn btn-raised btn-primary"  name="submit" value='submit'>
+									<i class="fa fa-check-square-o"></i> Submit
 								</button>
 							</div>
 						</form>	

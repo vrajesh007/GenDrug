@@ -1,4 +1,20 @@
-a<!DOCTYPE html>
+<?php
+$con =mysqli_connect("localhost","root","root","gendrug");
+if($_POST)
+    {
+$a=$_POST['symptomname'];
+$insert=mysqli_query($con,"INSERT INTO symptomdetails(Symp_id,Symp_name) VALUES ('','{$a}')") or die("Error" .mysqli_error($con));
+if($insert)
+{
+	echo "<script> alert('Record inserted'); </script>";
+}
+else 
+{
+	echo "ERROR!!";
+}
+}
+?>
+<!DOCTYPE html>
 <html lang="en" class="loading">
   
 <?php 
@@ -47,8 +63,8 @@ include 'header.php';
 								<button type="button" class="btn btn-raised btn-warning mr-1" name="cancel">
 									<i class="ft-x"></i> Cancel
 								</button>
-								<button type="button" class="btn btn-raised btn-primary" name="save">
-									<i class="fa fa-check-square-o"></i> Save
+								<button type="submit" class="btn btn-raised btn-primary"  name="submit" value='submit'>
+									<i class="fa fa-check-square-o"></i> Submit
 								</button>
 							</div>
 						</form>	

@@ -1,3 +1,19 @@
+<?php
+$con =mysqli_connect("localhost","root","root","gendrug");
+if($_POST)
+    {
+$a=$_POST['areaname'];
+$insert=mysqli_query($con,"INSERT INTO areadetails(Area_id,Area_name) VALUES ('','{$a}')") or die("Error" .mysqli_error($con));
+if($insert)
+{
+	echo "<script> alert('Record inserted'); </script>";
+}
+else 
+{
+	echo "ERROR!!";
+}
+}
+?>
 <!DOCTYPE html>
 <html lang="en" class="loading">
   
@@ -44,11 +60,11 @@ include 'header.php';
 							</div>
 
 							<div class="form-actions center">
-								<button type="button" class="btn btn-raised btn-warning mr-1" name="cancel">
-									<i class="ft-x"></i> Cancel
+								<button type="reset" class="btn btn-raised btn-warning mr-1"  name="reset" value='reset'>
+									<i class="ft-x"></i> Reset
 								</button>
-								<button type="button" class="btn btn-raised btn-primary" name="save">
-									<i class="fa fa-check-square-o"></i> Save
+                                                            <button type="submit" class="btn btn-raised btn-primary"  name="submit" value='submit'>
+									<i class="fa fa-check-square-o"></i> Submit
 								</button>
 							</div>
 						</form>	

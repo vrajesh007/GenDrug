@@ -1,6 +1,28 @@
+<?php
+$con =mysqli_connect("localhost","root","root","gendrug");
+if($_POST)
+    {
+$a=$_POST['name'];
+$b=$_POST['gender'];
+$c=$_POST['phonenumber'];
+$d=$_POST['email'];
+$e=$_POST['password'];
+$f=$_POST['confirmpassword'];
+$g=$_POST['address'];
+$insert=mysqli_query($con,"INSERT INTO userregistration(U_id,U_name,Gender,Phonenum,Email,Password,Conpassword,Address) VALUES ('','{$a}','{$b}','{$c}','{$d}','{$e}','{$f}','{$g}')") or die("Error" .mysqli_error($con));
+if($insert)
+{
+	echo "<script> alert('Record inserted'); </script>";
+}
+else 
+{
+	echo "ERROR!!";
+}
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en" class="loading">
-  
 <?php 
 include 'header.php';
 ?>
@@ -31,7 +53,7 @@ include 'header.php';
 				<div class="card-body">
 					<div class="px-3">
 
-                                            <form class="form" method="POST">
+                                            <form class="form" method="POST" >
 							<div class="row justify-content-md-center">
 								<div class="col-md-6">
 									<div class="form-body">
@@ -44,13 +66,13 @@ include 'header.php';
 											<label>Gender</label>
 											<div class="input-group">
 												<div class="custom-control custom-radio custom-control-inline">
-                                                                                <input type="radio" id="customRadioInline1" checked name="customRadioInline1" class="custom-control-input">
-	                                                                        <label class="custom-control-label" for="customRadioInline1">Male</label>
-	                                                                        </div>
-	                                                                        <div class="custom-control custom-radio custom-control-inline">
-	                                                                        <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
-	                                                                        <label class="custom-control-label" for="customRadioInline2">Female</label>
-	                                                                        </div>
+                                                                                <input type="radio" id="customRadioInline1"  checked name="gender" class="custom-control-input" value="Male">
+                                                                                <label class="custom-control-label" for="customRadioInline1">Male</label>
+                                                                                </div>
+                                                                                <div class="custom-control custom-radio custom-control-inline">
+                                                                                    <input type="radio" id="customRadioInline2" name="gender" class="custom-control-input" value="Female">
+                                                                                    <label class="custom-control-label" for="customRadioInline2">Female</label>
+                                                                                </div>
 											</div>
 										</div>
 
@@ -87,11 +109,11 @@ include 'header.php';
 							</div>
 
 							<div class="form-actions center">
-								<button type="button" class="btn btn-raised btn-warning mr-1"  name="cancel">
-									<i class="ft-x"></i> Cancel
+								<button type="reset" class="btn btn-raised btn-warning mr-1"  name="reset" value='reset'>
+									<i class="ft-x"></i> Reset
 								</button>
-								<button type="button" class="btn btn-raised btn-primary"  name="save">
-									<i class="fa fa-check-square-o"></i> Save
+                                                            <button type="submit" class="btn btn-raised btn-primary"  name="submit" value='submit'>
+									<i class="fa fa-check-square-o"></i> Submit
 								</button>
 							</div>
 						</form>	
