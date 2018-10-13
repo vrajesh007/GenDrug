@@ -32,6 +32,12 @@ include 'sidebar.php' ;
                     <div class="card-block">
                         <?php
                                 $con =mysqli_connect("localhost","root","root","gendrug");
+                                if(isset($_GET['did']))
+                                {
+                                $deleteid=$_GET['did'];
+                                $deletequery = mysqli_query($con, "delete from supplierdetails where Supp_id= '{$deleteid}' ") or die(mysqli_error($con));
+                               
+                                } 
                                 $query=mysqli_query($con, "select * from supplierdetails") or die(mysqli_error($con));
                           echo"<table class='table'>";
                            echo" <thead>";
@@ -42,6 +48,7 @@ include 'sidebar.php' ;
                                 echo"<th>Supplier Address</th>";
                                 echo"<th>Supplier Phone Number</th>";  
                                 echo"<th>Supplier Stock</th>";
+                                echo"<th>Actions</th>";
                                 echo"</tr>";
                             echo"</thead>";
                           
@@ -54,6 +61,7 @@ include 'sidebar.php' ;
                                     echo"<td>{$row['Supp_add']}</td>";
                                     echo"<td>{$row['Supp_phnum']}</td>"; 
                                     echo"<td>{$row['Supp_stock']}</td>";   
+                                    echo "<td> Edit | <a href='Supplierdetails-table.php?did={$row['Supp_id']}' > <img src='img/delete.png' alternate='Delete' height='27' width='27'/>  </a> </td>";
                                 echo"</tr>";
                                 }
                                 

@@ -32,6 +32,12 @@ include 'sidebar.php' ;
                     <div class="card-block">
                         <?php
                                 $con =mysqli_connect("localhost","root","root","gendrug");
+                                if(isset($_GET['did']))
+                                {
+                                $deleteid=$_GET['did'];
+                                $deletequery = mysqli_query($con, "delete from medicinedetails where P_id= '{$deleteid}' ") or die(mysqli_error($con));
+                               
+                                } 
                                 $query=mysqli_query($con, "select * from medicinedetails") or die(mysqli_error($con));
                           echo"<table class='table'>";
                            echo" <thead>";
@@ -42,6 +48,7 @@ include 'sidebar.php' ;
                                 echo"<th>Product Details</th>";
                                 echo"<th>Price</th>";
                                 echo"<th>Stock</th>";    
+                                echo"<th>Actions</th>";
                                 echo"</tr>";
                             echo"</thead>";
                           
@@ -54,6 +61,7 @@ include 'sidebar.php' ;
                                     echo"<td>{$row['P_details']}</td>";
                                     echo"<td>{$row['P_price']}</td>";
                                     echo"<td>{$row['P_stock']}</td>";  
+                                    echo "<td> Edit | <a href='Medicinedetails-table.php?did={$row['P_id']}' > <img src='img/delete.png' alternate='Delete' height='27' width='27'/> </a> </td>";
                                 echo"</tr>";
                                 }
                                 

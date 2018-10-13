@@ -32,6 +32,12 @@ include 'sidebar.php' ;
                     <div class="card-block">
                         <?php
                                 $con =mysqli_connect("localhost","root","root","gendrug");
+                                if(isset($_GET['did']))
+                                {
+                                $deleteid=$_GET['did'];
+                                $deletequery = mysqli_query($con, "delete from deliverymandetails where Deliveryman_id= '{$deleteid}' ") or die(mysqli_error($con));
+                               
+                                } 
                                 $query=mysqli_query($con, "select * from deliverymandetails") or die(mysqli_error($con));
                           echo"<table class='table'>";
                            echo" <thead>";
@@ -40,7 +46,8 @@ include 'sidebar.php' ;
                                 echo"<th>Number</th>";
                                 echo"<th>Deliveryman Name</th>";
                                 echo"<th>Deliveryman Address</th>";
-                                echo"<th>Deliveryman Phone Number</th>";   
+                                echo"<th>Deliveryman Phone Number</th>"; 
+                                echo"<th>Actions</th>";
                                 echo"</tr>";
                             echo"</thead>";
                           
@@ -51,7 +58,8 @@ include 'sidebar.php' ;
                                     echo"<th scope='row'>{$row['Deliveryman_id']}</th>";
                                     echo"<td>{$row['Deliveryman_name']}</td>";
                                     echo"<td>{$row['Deliveryman_address']}</td>";
-                                    echo"<td>{$row['Deliveryman_phnum']}</td>";    
+                                    echo"<td>{$row['Deliveryman_phnum']}</td>";  
+                                    echo "<td> Edit | <a href='Deliverymandetails-table.php?did={$row['Deliveryman_id']}' > <img src='img/delete.png' alternate='Delete' height='27' width='27'/>  </a> </td>";
                                 echo"</tr>";
                                 }
                                 

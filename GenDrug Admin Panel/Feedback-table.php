@@ -32,6 +32,12 @@ include 'sidebar.php' ;
                     <div class="card-block">
                         <?php
                                 $con =mysqli_connect("localhost","root","root","gendrug");
+                                if(isset($_GET['did']))
+                                {
+                                $deleteid=$_GET['did'];
+                                $deletequery = mysqli_query($con, "delete from Feedback where Feedback_id= '{$deleteid}' ") or die(mysqli_error($con));
+                               
+                                } 
                                 $query=mysqli_query($con, "select * from feedback") or die(mysqli_error($con));
                           echo"<table class='table'>";
                            echo" <thead>";
@@ -41,6 +47,7 @@ include 'sidebar.php' ;
                                 echo"<th>Feedback</th>";
                                 echo"<th>Feedback Date</th>";
                                 echo"<th>Feedback Status</th>";   
+                                echo"<th>Actions</th>";
                                 echo"</tr>";
                             echo"</thead>";
                           
@@ -51,7 +58,8 @@ include 'sidebar.php' ;
                                     echo"<th scope='row'>{$row['Feedback_id']}</th>";
                                     echo"<td>{$row['Feedback']}</td>";
                                     echo"<td>{$row['Feedback_date']}</td>";
-                                    echo"<td>{$row['Feedback_status']}</td>";    
+                                    echo"<td>{$row['Feedback_status']}</td>";  
+                                    echo "<td> Edit | <a href='Feedback-table.php?did={$row['Feedback_id']}' > <img src='img/delete.png' alternate='Delete' height='27' width='27'/> </a> </td>";
                                 echo"</tr>";
                                 }
                                 

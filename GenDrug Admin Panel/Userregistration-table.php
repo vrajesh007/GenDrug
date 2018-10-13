@@ -32,7 +32,14 @@ include 'sidebar.php' ;
                     <div class="card-block">
                         <?php
                                 $con =mysqli_connect("localhost","root","root","gendrug");
+                                if(isset($_GET['did']))
+                                {
+                                $deleteid=$_GET['did'];
+                                $deletequery = mysqli_query($con, "delete from userregistration where U_id= '{$deleteid}' ") or die(mysqli_error($con));
+                               
+                                } 
                                 $query=mysqli_query($con, "select * from userregistration") or die(mysqli_error($con));
+                                
                           echo"<table class='table'>";
                            echo" <thead>";
                              
@@ -45,6 +52,7 @@ include 'sidebar.php' ;
                                 echo"<th>Password</th>";
                                 echo"<th>Confirm Password</th>";
                                 echo"<th>Address</th>";
+                                echo"<th>Actions</th>";
                                     
                                 echo"</tr>";
                             echo"</thead>";
@@ -61,6 +69,7 @@ include 'sidebar.php' ;
                                     echo"<td>{$row['Password']}</td>";
                                     echo"<td>{$row['Conpassword']}</td>";
                                     echo"<td>{$row['Address']}</td>";
+                                    echo "<td> Edit | <a href='Userregistration-table.php?did={$row['U_id']}' > <img src='img/delete.png' alternate='Delete' height='27' width='27'/>  </a> </td>";
                                     
                                 echo"</tr>";
                                 }
