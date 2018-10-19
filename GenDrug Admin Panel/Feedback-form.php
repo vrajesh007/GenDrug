@@ -86,6 +86,7 @@ include 'header.php';
 								<button type="submit" class="btn btn-raised btn-primary"  name="submit" value='submit'>
 									<i class="fa fa-check-square-o"></i> Submit
 								</button>
+                                                            <a href="Feedback-table.php"  class="btn btn-raised btn-dark">View Table</a>
 							</div>
 						</form>	
 

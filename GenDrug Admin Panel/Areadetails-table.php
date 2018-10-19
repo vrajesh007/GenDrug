@@ -25,8 +25,8 @@ include 'sidebar.php' ;
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Area Details Table</h4>
-                   
+                    <h4 class="card-title">Area Details Table</h4>  
+                      <a href="Areadetails-form.php"  class="btn btn-raised btn-info">Add</a>
                 </div>
                 <div class="card-body">
                     <div class="card-block">

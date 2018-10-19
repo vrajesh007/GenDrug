@@ -23,63 +23,124 @@
                   </li>
                 </ul>
               </li>
-              <li class="has-sub nav-item"><a href="#"><i class="ft-edit"></i><span data-i18n="" class="menu-title">Forms</span></a>
-                <ul class="menu-content">
-                    <li><a href="Userregistration-form.php" class="menu-item">User Registration</a>
+              
+              
+              <li class="has-sub nav-item"><a href="#"><span data-i18n="" class="menu-title">User Registration</span></a>  
+                  <ul class="menu-content">  
+                  <li><a href="Userregistration-form.php" class="menu-item"> <i class="ft-edit"></i>Add</a>
                   </li>
-                  <li><a href="Categorydetails-form.php" class="menu-item">Category Details</a>
+                  <li><a href="Userregistration-table.php" class="menu-item"> <i class="ft-grid"></i>View</a>  
                   </li>
-                  <li><a href="Medicinedetails-form.php" class="menu-item">Medicine Details</a>
+                  </ul>
+              </li>   
+              
+              <li class="has-sub nav-item"><a href="#"><span data-i18n="" class="menu-title">Area Details</span></a>  
+                  <ul class="menu-content">  
+                      <li><a href="Areadetails-form.php" class="menu-item"> <i class="ft-edit"></i>Add</a>
                   </li>
-                  <li><a href="Branddetails-form.php" class="menu-item">Brand Details</a>
+                  <li><a href="Areadetails-table.php" class="menu-item"> <i class="ft-grid"></i>View</a>  
                   </li>
-                  <li><a href="Symptomdetails-form.php" class="menu-item">Symptom Details</a>
+                  </ul>
+              </li>  
+              
+              <li class="has-sub nav-item"><a href="#"><span data-i18n="" class="menu-title">Brand Details</span></a>  
+                  <ul class="menu-content">  
+                      <li><a href="Branddetails-form.php" class="menu-item"> <i class="ft-edit"></i>Add</a>
                   </li>
-                  <li><a href="Prescriptiondetails-form.php" class="menu-item">Prescription Details</a>
+                  <li><a href="Branddetails-table.php" class="menu-item"> <i class="ft-grid"></i>View</a>  
                   </li>
-                  <li><a href="Supplierdetails-form.php" class="menu-item">Supplier Details</a>
+                  </ul>
+              </li> 
+              
+              <li class="has-sub nav-item"><a href="#"><span data-i18n="" class="menu-title">Category Details</span></a>  
+                  <ul class="menu-content">  
+                      <li><a href="Categorydetails-form.php" class="menu-item"> <i class="ft-edit"></i>Add</a>
                   </li>
-                  <li><a href="Deliverymandetails-form.php" class="menu-item">Delivery-man Details</a>
+                  <li><a href="Categorydetails-table.php" class="menu-item"> <i class="ft-grid"></i>View</a>  
                   </li>
-                  <li><a href="Areadetails-form.php" class="menu-item">Area Details</a>
+                  </ul>
+              </li>  
+              
+
+              <li class="has-sub nav-item"><a href="#"><span data-i18n="" class="menu-title">Medicine Details</span></a>  
+                  <ul class="menu-content">  
+                      <li><a href="Medicinedetails-form.php" class="menu-item"> <i class="ft-edit"></i>Add</a>
                   </li>
-                  <li><a href="Orderdetails-form.php" class="menu-item">Order Details</a>
+                  <li><a href="Medicinedetails-table.php" class="menu-item"> <i class="ft-grid"></i>View</a>  
                   </li>
-                  <li><a href="Shippingstatus-form.php" class="menu-item">Shipping Status</a>
+                  </ul>
+              </li>  
+              
+             
+              
+              <li class="has-sub nav-item"><a href="#"><span data-i18n="" class="menu-title">Prescription Details</span></a>  
+                  <ul class="menu-content">  
+                      <li><a href="Prescriptiondetails-form.php" class="menu-item"> <i class="ft-edit"></i>Add</a>
                   </li>
-                  <li><a href="Feedback-form.php" class="menu-item">Feedback</a>
+                  <li><a href="Prescriptiondetails-table.php" class="menu-item"> <i class="ft-grid"></i>View</a>  
                   </li>
-                </ul>
-              </li>
-              <li class="has-sub nav-item"><a href="#"><i class="ft-grid"></i><span data-i18n="" class="menu-title">Tables</span></a>
-                <ul class="menu-content">
-                  <li><a href="Userregistration-table.php" class="menu-item">User Registration</a>
+                  </ul>
+              </li>  
+              
+
+              <li class="has-sub nav-item"><a href="#"><span data-i18n="" class="menu-title">Supplier Details</span></a>  
+                  <ul class="menu-content">  
+                      <li><a href="Supplierdetails-form.php" class="menu-item"> <i class="ft-edit"></i>Add</a>
                   </li>
-                  <li><a href="Categorydetails-table.php" class="menu-item">Category Details</a>
+                  <li><a href="Supplierdetails-table.php" class="menu-item"> <i class="ft-grid"></i>View</a>  
                   </li>
-                  <li><a href="Medicinedetails-table.php" class="menu-item">Medicine Details</a>
+                  </ul>
+              </li>  
+              
+              <li class="has-sub nav-item"><a href="#"><span data-i18n="" class="menu-title">Symptom Details</span></a>  
+                  <ul class="menu-content">  
+                      <li><a href="Symptomdetails-form.php" class="menu-item"> <i class="ft-edit"></i>Add</a>
                   </li>
-                  <li><a href="Branddetails-table.php" class="menu-item">Brand Details</a>
+                  <li><a href="Symptomdetails-table.php" class="menu-item"> <i class="ft-grid"></i>View</a>  
                   </li>
-                  <li><a href="Symptomdetails-table.php" class="menu-item">Symptom Details</a>
+                  </ul>
+              </li>  
+              
+               <li class="has-sub nav-item"><a href="#"><span data-i18n="" class="menu-title">Order Details</span></a>  
+                  <ul class="menu-content">  
+                      <li><a href="Orderdetails-form.php" class="menu-item"> <i class="ft-edit"></i>Add</a>
                   </li>
-                  <li><a href="Prescriptiondetails-table.php" class="menu-item">Prescription Details</a>
+                  <li><a href="Orderdetails-table.php" class="menu-item"> <i class="ft-grid"></i>View</a>  
                   </li>
-                  <li><a href="Supplierdetails-table.php" class="menu-item">Supplier Details</a>
+                  </ul>
+              </li>  
+              
+              <li class="has-sub nav-item"><a href="#"><span data-i18n="" class="menu-title">Shipping Status</span></a>  
+                  <ul class="menu-content">  
+                      <li><a href="Shippingstatus-form.php" class="menu-item"> <i class="ft-edit"></i>Add</a>
                   </li>
-                  <li><a href="Deliverymandetails-table.php" class="menu-item">Delivery-man Details</a>
+                  <li><a href="Shippingstatus-table.php" class="menu-item"> <i class="ft-grid"></i>View</a>  
                   </li>
-                  <li><a href="Areadetails-table.php" class="menu-item">Area Details</a>
+                  </ul>
+              </li> 
+              
+              <li class="has-sub nav-item"><a href="#"><span data-i18n="" class="menu-title">Deliveryman Details</span></a>  
+                  <ul class="menu-content">  
+                      <li><a href="Deliverymandetails-form.php" class="menu-item"> <i class="ft-edit"></i>Add</a>
                   </li>
-                  <li><a href="Orderdetails-table.php" class="menu-item">Order Details</a>
+                  <li><a href="Deliverymandetails-table.php" class="menu-item"> <i class="ft-grid"></i>View</a>  
                   </li>
-                  <li><a href="Shippingstatus-table.php" class="menu-item">Shipping Status</a>
+                  </ul>
+              </li>  
+              
+              <li class="has-sub nav-item"><a href="#"><span data-i18n="" class="menu-title">Feedback</span></a>  
+                  <ul class="menu-content">  
+                      <li><a href="Feedback-form.php" class="menu-item"> <i class="ft-edit"></i>Add</a>
                   </li>
-                  <li><a href="Feedback-table.php" class="menu-item">Feedback</a>
+                  <li><a href="Feedback-table.php" class="menu-item"> <i class="ft-grid"></i>View</a>  
                   </li>
-                </ul>
+                  </ul>
+              </li>  
+   
             </ul>
+              
           </div>
+            
         </div>
         <!-- main menu content-->
         <div class="sidebar-background"></div>
@@ -88,3 +149,6 @@
         <!-- main menu footer-->
       </div>
       
+      
+      
+        
