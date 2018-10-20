@@ -26,7 +26,7 @@ include 'sidebar.php' ;
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">Symptom Details Table</h4>
-                    <a href="Symptomdetails-form.php"  class="btn btn-raised btn-info">Add</a>
+                    <a href="Symptomdetails-form.php"  class="btn btn-raised btn-info" style="float:right">Add</a>
                    
                 </div>
                 <div class="card-body">

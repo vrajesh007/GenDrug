@@ -136,6 +136,8 @@
                   </li>
                   </ul>
               </li>  
+              <li class=" nav-item"><a href="Changepassword.php"><span data-i18n="" class="menu-title">Change Password</span></a>
+              </li>
    
             </ul>
               
