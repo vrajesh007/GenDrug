@@ -31,7 +31,7 @@ include 'sidebar.php' ;
                 <div class="card-body">
                     <div class="card-block">
                         <?php
-                                $con =mysqli_connect("localhost","root","root","gendrug");
+                                $con =mysqli_connect("localhost","root","","gendrug");
                                 if(isset($_GET['did']))
                                 {
                                 $deleteid=$_GET['did'];

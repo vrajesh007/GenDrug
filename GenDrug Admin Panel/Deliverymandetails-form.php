@@ -1,5 +1,5 @@
 <?php
-$con =mysqli_connect("localhost","root","root","gendrug");
+$con =mysqli_connect("localhost","root","","gendrug");
 if($_POST)
     {
 $a=$_POST['deliverymanname'];
