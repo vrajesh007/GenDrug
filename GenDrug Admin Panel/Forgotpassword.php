@@ -16,7 +16,7 @@
             <div class="img-holder">
                 <div class="bg"></div>
                 <div class="info-holder">
-                    <img src="img/hqlogo.png" alt="GenDrug">
+                    <img src="img/hqlogo.jpg" alt="GenDrug">
                 </div>
             </div>
             <div class="form-holder">

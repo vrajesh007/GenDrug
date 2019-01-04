@@ -60,7 +60,7 @@ include 'sidebar.php' ;
                                     echo"<td>{$row['Pres_name']}</td>";
                                     echo"<td>{$row['Pres_details']}</td>";
                                     echo"<td>{$row['Pres_price']}</td>";    
-                                    echo "<td> Edit | <a href='Prescriptiondetails-table.php?did={$row['Pres_id']}' > <img src='img/delete.png' alternate='Delete' height='27' width='27'/>  </a> </td>";
+                                    echo "<td> <a href='Prescriptiondetails-edit.php?editid=$row[0]' > <img src='img/edit.png' alternate='Edit' height='27' width='27'/>  </a> | <a href='Prescriptiondetails-table.php?did={$row['Pres_id']}' > <img src='img/delete.png' alternate='Delete' height='27' width='27'/>  </a> </td>";
                                 echo"</tr>";
                                 }
                                 

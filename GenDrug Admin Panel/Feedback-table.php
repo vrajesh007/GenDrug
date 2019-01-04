@@ -60,7 +60,7 @@ include 'sidebar.php' ;
                                     echo"<td>{$row['Feedback']}</td>";
                                     echo"<td>{$row['Feedback_date']}</td>";
                                     echo"<td>{$row['Feedback_status']}</td>";  
-                                    echo "<td> Edit | <a href='Feedback-table.php?did={$row['Feedback_id']}' > <img src='img/delete.png' alternate='Delete' height='27' width='27'/> </a> </td>";
+                                    echo "<td> <a href='Feedback-edit.php?editid=$row[0]' > <img src='img/edit.png' alternate='Edit' height='27' width='27'/>  </a> | <a href='Feedback-table.php?did={$row['Feedback_id']}' > <img src='img/delete.png' alternate='Delete' height='27' width='27'/> </a> </td>";
                                 echo"</tr>";
                                 }
                                 

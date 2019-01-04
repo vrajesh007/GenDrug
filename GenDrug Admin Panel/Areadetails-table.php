@@ -5,7 +5,7 @@
 include 'header.php';
 ?>
 <body>
-<?php 
+<?php
 include 'sidebar.php' ;
 ?>
 
@@ -57,7 +57,7 @@ include 'sidebar.php' ;
                                echo"<tr class='table-primary'>";
                                     echo"<th scope='row'>{$row['Area_id']}</th>";
                                     echo"<td>{$row['Area_name']}</td>";
-                                    echo "<td> Edit | <a href='Areadetails-table.php?did={$row['Area_id']}'> <img src='img/delete.png' alternate='Delete' height='27' width='27'/>  </a> </td>";
+                                    echo "<td> <a href='Areadetails-edit.php?editid=$row[0]' > <img src='img/edit.png' alternate='Edit' height='27' width='27'/>  </a> | <a href='Areadetails-table.php?did={$row['Area_id']}'> <img src='img/delete.png' alternate='Delete' height='27' width='27'/>  </a> </td>";
                                 echo"</tr>";
                                 }
                            echo"</tbody>";

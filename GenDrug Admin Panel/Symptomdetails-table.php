@@ -58,7 +58,7 @@ include 'sidebar.php' ;
                                echo"<tr class='table-primary'>";
                                     echo"<th scope='row'>{$row['Symp_id']}</th>";
                                     echo"<td>{$row['Symp_name']}</td>";
-                                    echo "<td> Edit | <a href='Symptomdetails-table.php?did={$row['Symp_id']}' > <img src='img/delete.png' alternate='Delete' height='27' width='27'/>  </a> </td>";
+                                    echo "<td> <a href='Symptomdetails-edit.php?editid=$row[0]' > <img src='img/edit.png' alternate='Edit' height='27' width='27'/>  </a>  | <a href='Symptomdetails-table.php?did={$row['Symp_id']}' > <img src='img/delete.png' alternate='Delete' height='27' width='27'/>  </a> </td>";
                                 echo"</tr>";
                                 }
                            echo"</tbody>";

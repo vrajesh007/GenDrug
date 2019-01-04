@@ -47,13 +47,13 @@ include 'header.php';
 				<div class="card-body">
 					<div class="px-3">
 
-                                            <form class="form" method="POST">
+                                            <form id="myform" class="form" method="POST">
 							<div class="row justify-content-md-center">
 								<div class="col-md-6">
 									<div class="form-body">
 										<div class="form-group">
 											<label for="eventInput1">Symptom Name</label>
-											<input type="text" id="eventInput1" class="form-control"  name="symptomname">
+											<input type="text" id="eventInput1" class="form-control required"  name="symptomname">
 										</div>
 									</div>
 								</div>

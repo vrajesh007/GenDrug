@@ -58,7 +58,7 @@ include 'sidebar.php' ;
                                     echo"<th scope='row'>{$row['Order_id']}</th>";
                                     echo"<td>{$row['Order_quantity']}</td>";
                                     echo"<td>{$row['Order_amount']}</td>";
-                                    echo "<td> Edit | <a href='Orderdetails-table.php?did={$row['Order_id']}' > <img src='img/delete.png' alternate='Delete' height='27' width='27'/>  </a> </td>";
+                                    echo "<td> <a href='Orderdetails-edit.php?editid=$row[0]' > <img src='img/edit.png' alternate='Edit' height='27' width='27'/>  </a>| <a href='Orderdetails-table.php?did={$row['Order_id']}' > <img src='img/delete.png' alternate='Delete' height='27' width='27'/>  </a> </td>";
                                 echo"</tr>";
                                 }
                                 

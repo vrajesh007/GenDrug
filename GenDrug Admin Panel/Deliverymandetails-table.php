@@ -60,7 +60,7 @@ include 'sidebar.php' ;
                                     echo"<td>{$row['Deliveryman_name']}</td>";
                                     echo"<td>{$row['Deliveryman_address']}</td>";
                                     echo"<td>{$row['Deliveryman_phnum']}</td>";  
-                                    echo "<td> Edit | <a href='Deliverymandetails-table.php?did={$row['Deliveryman_id']}' > <img src='img/delete.png' alternate='Delete' height='27' width='27'/>  </a> </td>";
+                                    echo "<td> <a href='Deliverymandetails-edit.php?editid=$row[0]' > <img src='img/edit.png' alternate='Edit' height='27' width='27'/>  </a> | <a href='Deliverymandetails-table.php?did={$row['Deliveryman_id']}' > <img src='img/delete.png' alternate='Delete' height='27' width='27'/>  </a> </td>";
                                 echo"</tr>";
                                 }
                                 

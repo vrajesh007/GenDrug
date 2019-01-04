@@ -70,7 +70,7 @@ include 'sidebar.php' ;
                                     echo"<td>{$row['Password']}</td>";
                                     echo"<td>{$row['Conpassword']}</td>";
                                     echo"<td>{$row['Address']}</td>";
-                                    echo "<td> Edit | <a href='Userregistration-table.php?did={$row['U_id']}' > <img src='img/delete.png' alternate='Delete' height='27' width='27'/>  </a> </td>";
+                                    echo "<td> <a href='Userregistration-edit.php?editid=$row[0]' > <img src='img/edit.png' alternate='Edit' height='27' width='27'/>  </a> | <a href='Userregistration-table.php?did={$row['U_id']}' > <img src='img/delete.png' alternate='Delete' height='27' width='27'/>  </a> </td>";
                                     
                                 echo"</tr>";
                                 }

@@ -17,7 +17,7 @@
                 <div class="bg"></div>
                 <div class="info-holder">
                     
-                    <img src="img/hqlogo.png"/>
+                    <img src="img/hqlogo.jpg"/>
                 </div>
             </div>
             <div class="form-holder">

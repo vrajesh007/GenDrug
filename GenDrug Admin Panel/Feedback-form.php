@@ -50,7 +50,7 @@ include 'header.php';
 				<div class="card-body">
 					<div class="px-3">
 
-                                            <form class="form"method="POST">
+                                            <form id="myform" class="form"method="POST">
 							<div class="row justify-content-md-center">
 								<div class="col-md-6">
 									<div class="form-body">
@@ -58,18 +58,17 @@ include 'header.php';
 
                                                                                 <div class="form-group">
 									        <label for="userinput1">Feedback</label>
-                                                                                <textarea id="userinput1" rows="5" class="form-control border-primary" name="feedback" >
-                                                                                </textarea>
+                                                                                <textarea id="userinput1" rows="5" class="form-control border-primary required" name="feedback" ></textarea>
 								                </div>
                                                                             
                                                                                 <div class="form-group">
 											<label for="eventInput2">Feedback Date</label>
-                                                                                        <input type="date" id="eventInput2" class="form-control" name="feedbackdate" >
+                                                                                        <input type="date" id="eventInput2" class="form-control required" name="feedbackdate" >
 										</div>
                                                                             
                                                                                 <div class="form-group">
 											<label for="eventInput3">Feedback Status</label>
-                                                                                        <input type="text" id="eventInput3" class="form-control" name="feedbackstatus" >
+                                                                                        <input type="text" id="eventInput3" class="form-control required" name="feedbackstatus" >
 										</div>
                                                                                 
 

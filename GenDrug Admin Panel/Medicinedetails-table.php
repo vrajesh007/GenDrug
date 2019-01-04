@@ -62,7 +62,7 @@ include 'sidebar.php' ;
                                     echo"<td>{$row['P_details']}</td>";
                                     echo"<td>{$row['P_price']}</td>";
                                     echo"<td>{$row['P_stock']}</td>";  
-                                    echo "<td> Edit | <a href='Medicinedetails-table.php?did={$row['P_id']}' > <img src='img/delete.png' alternate='Delete' height='27' width='27'/> </a> </td>";
+                                    echo "<td> <a href='Medicinedetails-edit.php?editid=$row[0]' > <img src='img/edit.png' alternate='Edit' height='27' width='27'/>  </a> | <a href='Medicinedetails-table.php?did={$row['P_id']}' > <img src='img/delete.png' alternate='Delete' height='27' width='27'/> </a> </td>";
                                 echo"</tr>";
                                 }
                                 

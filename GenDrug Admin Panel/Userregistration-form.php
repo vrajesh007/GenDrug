@@ -53,24 +53,24 @@ include 'header.php';
 				<div class="card-body">
 					<div class="px-3">
 
-                                            <form class="form" method="POST" >
+                                            <form id="myform" class="form" method="POST" >
 							<div class="row justify-content-md-center">
 								<div class="col-md-6">
 									<div class="form-body">
 										<div class="form-group">
 											<label for="eventInput1">Name</label>
-											<input type="text" id="eventInput1" class="form-control"  name="name">
+											<input type="text" id="eventInput1" class="form-control required"  name="name">
 										</div>
 
 										<div class="form-group">
 											<label>Gender</label>
 											<div class="input-group">
 												<div class="custom-control custom-radio custom-control-inline">
-                                                                                <input type="radio" id="customRadioInline1"  checked name="gender" class="custom-control-input" value="Male">
+                                                                                <input type="radio" id="customRadioInline1"  checked name="gender" class="custom-control-input required" value="Male">
                                                                                 <label class="custom-control-label" for="customRadioInline1">Male</label>
                                                                                 </div>
                                                                                 <div class="custom-control custom-radio custom-control-inline">
-                                                                                    <input type="radio" id="customRadioInline2" name="gender" class="custom-control-input" value="Female">
+                                                                                    <input type="radio" id="customRadioInline2" name="gender" class="custom-control-input required" value="Female">
                                                                                     <label class="custom-control-label" for="customRadioInline2">Female</label>
                                                                                 </div>
 											</div>
@@ -78,28 +78,27 @@ include 'header.php';
 
 										<div class="form-group">
 											<label for="eventInput2">Phone Number</label>
-											<input type="number" id="eventInput2" class="form-control"  name="phonenumber">
+											<input type="number" id="eventInput2" class="form-control required"  name="phonenumber">
 										</div>
 
 										<div class="form-group">
 											<label for="eventInput3">Email</label>
-											<input type="email" id="eventInput3" class="form-control"  name="email">
+											<input type="email" id="eventInput3" class="form-control required"  name="email">
 										</div>
 
 										<div class="form-group">
 											<label for="eventInput4">Password</label>
-											<input type="password" id="eventInput4" class="form-control" name="password" >
+											<input type="password" id="eventInput4" class="form-control required" name="password" >
 										</div>
                                                                             
                                                                                 <div class="form-group">
 											<label for="eventInput5">Confirm Password</label>
-											<input type="password" id="eventInput5" class="form-control" name="confirmpassword" >
+											<input type="password" id="eventInput5" class="form-control required" name="confirmpassword" >
 										</div>
                                                                             
                                                                                 <div class="form-group">
 									        <label for="userinput6">Address</label>
-                                                                                <textarea id="userinput6" rows="5" class="form-control border-primary" name="address" >
-                                                                                </textarea>
+                                                                                <textarea id="userinput6" rows="5" class="form-control border-primary required" name="address" ></textarea>
 								                </div>
 
 										

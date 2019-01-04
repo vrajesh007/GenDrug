@@ -58,7 +58,7 @@ include 'sidebar.php' ;
                                echo"<tr class='table-primary'>";
                                     echo"<th scope='row'>{$row['Shipping_id']}</th>";
                                     echo"<td>{$row['Shipping_status']}</td>";
-                                    echo "<td> Edit | <a href='Shippingstatus-table.php?did={$row['Shipping_id']}' > <img src='img/delete.png' alternate='Delete' height='27' width='27'/>  </a> </td>";
+                                    echo "<td> <a href='Shippingstatus-edit.php?editid=$row[0]' > <img src='img/edit.png' alternate='Edit' height='27' width='27'/>  </a> | <a href='Shippingstatus-table.php?did={$row['Shipping_id']}' > <img src='img/delete.png' alternate='Delete' height='27' width='27'/>  </a> </td>";
                                 echo"</tr>";
                                 }
                            echo"</tbody>";

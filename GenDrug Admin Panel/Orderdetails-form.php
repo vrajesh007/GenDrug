@@ -49,20 +49,20 @@ include 'header.php';
 				<div class="card-body">
 					<div class="px-3">
 
-                                            <form class="form"method="POST">
+                                            <form id="myform" class="form"method="POST">
 							<div class="row justify-content-md-center">
 								<div class="col-md-6">
 									<div class="form-body">
 										<div class="form-group">
 											<label for="eventInput1">Order Quantity</label>
-											<input type="number" id="eventInput1" class="form-control"  name="orderquantity">
+											<input type="number" id="eventInput1" class="form-control required"  name="orderquantity">
 										</div>
 
                                                                                 
                                                                             
                                                                                 <div class="form-group">
 											<label for="eventInput2">Order Amount</label>
-											<input type="number" id="eventInput2" class="form-control" name="orderamount" >
+											<input type="number" id="eventInput2" class="form-control required" name="orderamount" >
 										</div>
                                                                                 
 

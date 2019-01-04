@@ -51,29 +51,28 @@ include 'header.php';
 				<div class="card-body">
 					<div class="px-3">
 
-                                            <form class="form"method="POST">
+                                            <form id="myform" class="form"method="POST">
 							<div class="row justify-content-md-center">
 								<div class="col-md-6">
 									<div class="form-body">
 										<div class="form-group">
 											<label for="eventInput1">Supplier Name</label>
-											<input type="text" id="eventInput1" class="form-control"  name="suppliername">
+											<input type="text" id="eventInput1" class="form-control required"  name="suppliername">
 										</div>
 
                                                                                 <div class="form-group">
 									        <label for="userinput2">Supplier's Address</label>
-                                                                                <textarea id="userinput2" rows="5" class="form-control border-primary" name="supplieraddress" >
-                                                                                </textarea>
+                                                                                <textarea id="userinput2" rows="5" class="form-control border-primary required" name="supplieraddress" ></textarea>
 								                </div>
                                                                             
                                                                                 <div class="form-group">
 											<label for="eventInput3">Supplier's Phone Number</label>
-											<input type="number" id="eventInput3" class="form-control" name="supplierphonenumber" >
+											<input type="number" id="eventInput3" class="form-control required" name="supplierphonenumber" >
 										</div>
                                                                             
                                                                                 <div class="form-group">
 											<label for="eventInput4">Supplier Medicine's Stock</label>
-											<input type="number" id="eventInput4" class="form-control" name="supplierstock" >
+											<input type="number" id="eventInput4" class="form-control required" name="supplierstock" >
 										</div>
                                                                                 
 

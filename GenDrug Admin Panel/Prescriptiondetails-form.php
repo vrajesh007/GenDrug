@@ -50,24 +50,23 @@ include 'header.php';
 				<div class="card-body">
 					<div class="px-3">
 
-                                            <form class="form"method="POST">
+                                            <form id="myform" class="form"method="POST">
 							<div class="row justify-content-md-center">
 								<div class="col-md-6">
 									<div class="form-body">
 										<div class="form-group">
 											<label for="eventInput1">Prescribed Medicine Name</label>
-											<input type="text" id="eventInput1" class="form-control"  name="prescribedname">
+											<input type="text" id="eventInput1" class="form-control required"  name="prescribedname">
 										</div>
 
                                                                                 <div class="form-group">
 									        <label for="userinput2">Prescribed Medicine Details</label>
-                                                                                <textarea id="userinput2" rows="5" class="form-control border-primary" name="prescribeddetails" >
-                                                                                </textarea>
+                                                                                <textarea id="userinput2" rows="5" class="form-control border-primary required" name="prescribeddetails" ></textarea>
 								                </div>
                                                                             
                                                                                 <div class="form-group">
 											<label for="eventInput3">Price</label>
-											<input type="number" id="eventInput3" class="form-control" name="price" >
+											<input type="number" id="eventInput3" class="form-control required" name="price" >
 										</div>
                                                                                 
 
