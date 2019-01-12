@@ -1,4 +1,61 @@
-<!DOCTYPE html>
+<?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+$con =mysqli_connect("localhost","root","","gendrug");
+
+if($_POST)
+{
+    $email = $_POST['email'];
+    $selectquery = mysqli_query($con,"select * from admin where Admin_email= '{$email}'") or die(mysqli_error($con));
+    $count= mysqli_num_rows($selectquery);
+    $row= mysqli_fetch_array($selectquery);
+    if($count>0)
+    {
+        
+        
+        //Load Composer's autoloader
+        require 'vendor/autoload.php';
+
+        $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+        try {
+            //Server settings
+            $mail->SMTPDebug = 0;                                 // Enable verbose debug output
+            $mail->isSMTP();                                      // Set mailer to use SMTP
+            $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+            $mail->SMTPAuth = true;                               // Enable SMTP authentication
+            $mail->Username = 'trivedi.vrajesh008@gmail.com';                 // SMTP username
+            $mail->Password = 'ABCDpassword12345';                           // SMTP password
+            $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+            $mail->Port = 587;                                    // TCP port to connect to
+
+            //Recipients
+            $mail->setFrom('trivedi.vrajesh008@gmail.com', 'Vrajesh Trivedi');
+            $mail->addAddress($email, $email);     // Add a recipient
+
+            //Content
+            $mail->isHTML(true);                                  // Set email format to HTML
+            $mail->Subject = 'GenDrug Password';
+            $mail->Body    = "Hi $email, your password is {$row['Admin_pass']}";
+
+            $mail->send();
+            echo "<script>alert('Enjoy! Your Password has been sent to your email id')</script>";    
+                       
+                     
+        } catch (Exception $e) {
+            echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+        }
+        
+    }
+    else 
+        {
+            echo "<script>alert('This Email is Incorrect')</script>";
+        }
+
+}
+?>
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,53 +70,31 @@
 <body>
     <div class="form-body">
         <div class="row">
-            <div class="img-holder">
+           <div class="img-holder">
                 <div class="bg"></div>
                 <div class="info-holder">
                     <img src="img/hqlogo.jpg" alt="GenDrug">
-                </div>
-            </div>
+                </div> 
+            </div> 
             <div class="form-holder">
                 <div class="form-content">
                     <div class="form-items">
-                        <div class="website-logo-inside">
-                            <a href="index.html">
-                                <div class="logo">
-                                    <img class="logo-size" src="images/logo-light.svg" alt="">
-                                </div>
-                            </a>
-                        </div>
+
                         <h3>Password Reset</h3>
                         <p>To reset your password, enter the email address you use to sign in to Gendrug</p>
-                        <form>
-                            <input class="form-control" type="text" name="username" placeholder="E-mail Address" required>
+                        <form method="Post">
+                            <input class="form-control" type="text" name="email" placeholder="E-mail Address" required>
                             <div class="form-button full-width">
-                                <button id="submit" type="submit" class="ibtn btn-forget">Send Reset Link</button>
+                                <button id="submit" type="submit" class="ibtn">Send Reset Link</button>                        
                             </div>
                         </form>
                     </div>
-                    <div class="form-sent">
-                        <div class="website-logo-inside">
-                            <a href="index.html">
-                                <div class="logo">
-                                    <img class="logo-size" src="images/logo-light.svg" alt="">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="tick-holder">
-                            <div class="tick-icon"></div>
-                        </div>
-                        <h3>Password link sent</h3>
-                        <p>Please check your inbox <a href="http://brandio.io/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1871777e6a755871777e6a756c7d756874796c7d367177">[email&#160;protected]</a></p>
-                        <div class="info-holder">
-                            <span>Unsure if that email address was correct?</span> <a href="#">We can help</a>.
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
         </div>
     </div>
-<script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery.min.js"></script>
+<script src="js/jquery.min.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
