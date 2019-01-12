@@ -15,13 +15,8 @@
         <div class="sidebar-content">
           <div class="nav-container">
             <ul id="main-menu-navigation" data-menu="menu-navigation" class="navigation navigation-main">
-              <li class="has-sub nav-item"><a href="#"><i class="ft-home"></i><span data-i18n="" class="menu-title">Dashboard</span></a>
-                <ul class="menu-content">
-                  <li><a href="dashboard1.html" class="menu-item">Dashboard1</a>
-                  </li>
-                  <li><a href="dashboard2.html" class="menu-item">Dashboard2</a>
-                  </li>
-                </ul>
+                <li class="nav-item"><a href="Dashboard.php"><i class="ft-home"></i><span data-i18n="" class="menu-title">Dashboard</span></a>
+                
               </li>
               
               
@@ -136,8 +131,7 @@
                   </li>
                   </ul>
               </li>  
-              <li class=" nav-item"><a href="Changepassword.php"><span data-i18n="" class="menu-title">Change Password</span></a>
-              </li>
+              
    
             </ul>
               

@@ -1,42 +1,64 @@
 <?php
+session_start();
 $con =mysqli_connect("localhost","root","","gendrug");
+if(!isset($_SESSION['session_id']))
+    {
+        header("location:Login.php");
+    
+    }
 if($_POST)
     {
-$a=$_POST['name'];
-$b=$_POST['gender'];
-$c=$_POST['phonenumber'];
-$d=$_POST['email'];
-$e=$_POST['password'];
-$f=$_POST['confirmpassword'];
-$g=$_POST['address'];
-$insert=mysqli_query($con,"INSERT INTO userregistration(U_id,U_name,Gender,Phonenum,Email,Password,Conpassword,Address) VALUES ('','{$a}','{$b}','{$c}','{$d}','{$e}','{$f}','{$g}')") or die("Error" .mysqli_error($con));
-if($insert)
-{
-	echo "<script> alert('Record inserted'); </script>";
-}
-else 
-{
-	echo "ERROR!!";
-}
-}
-
+        $opass=$_POST['password'];
+        $npass=$_POST['newpassword'];
+        $cpass=$_POST['confirmnewpassword'];
+        
+        $oldpassquery= mysqli_query($con,"select Admin_pass from admin where Admin_id='{$_SESSION['session_id']}'")  or die(mysqli_error($con));
+        $oldpassfetch= mysqli_fetch_array($oldpassquery);
+        if( $oldpassfetch['Admin_pass']== $opass)
+        {
+            if($npass == $cpass)
+            {
+                if($opass == $npass)
+                {
+                    echo"<script>alert('You cannot use the old password again.');</script>";
+                }
+                else 
+                {
+                    $updatequery= mysqli_query($con, "Update admin set Admin_pass='{$npass}' where Admin_id='{$_SESSION['session_id']}' ") or die(mysqli_error($con));
+                    if($updatequery)
+                    {
+                        echo"<script>alert('Password successfully changed! Enjoy.'); </script>";
+                    }
+                }
+            }
+            else
+            {
+                echo"<script>alert('New password and confirm password are not same.');</script>";
+            }
+        }
+        else 
+        {
+            echo"<script>alert('Your current password is not correct.');</script>";
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en" class="loading">
-<?php 
+<?php
 include 'header.php';
 ?>
+<body>
+<?php 
+include 'sidebar.php' ;
+?>
 
-  <body>
-    <?php 
-    include 'sidebar.php';
-    ?>
-       
-   
 <div class="main-panel">
 <div class="main-content">
-<div class="content-wrapper">       
+<div class="content-wrapper">
 <!-- Basic form layout section start -->
+
+
+<!--Contextual classes Starts-->
 <section id="basic-form-layouts">
 
 	
@@ -44,7 +66,7 @@ include 'header.php';
 		<div class="col-md-12">
 			<div class="card">
 				<div class="card-header">
-					<h4 class="card-title" id="basic-layout-form-center">Change Password</h4>
+					<h4 class="card-title" id="basic-layout-form-center">Got into trouble? Change your password!</h4>
 				</div>
 				<div class="card-body">
 					<div class="px-3">
@@ -92,7 +114,8 @@ include 'header.php';
 
 	
 </section>
-<!-- // Basic form layout section end -->
+<!--Contextual classes Ends-->
+
           </div>
         </div>
 <?php 
@@ -102,7 +125,6 @@ include 'header.php';
 
       </div>
     <!-- ////////////////////////////////////////////////////////////////////////////-->
-
     
     <?php 
     include 'bgtheme-settingicon.php';

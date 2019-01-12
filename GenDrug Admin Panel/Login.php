@@ -1,3 +1,29 @@
+<?php 
+session_start();
+$con =mysqli_connect("localhost","root","","gendrug");
+if($_POST)
+    {
+        $uname=$_POST['username'];
+        $pass=$_POST['password'];
+        $selectquery = mysqli_query($con, "SELECT * from admin where Admin_uname= '{$uname}' and Admin_pass='{$pass}'") or die(mysqli_errno($con));
+        $count= mysqli_num_rows($selectquery);
+        $row= mysqli_fetch_array($selectquery);
+        if($count>0)
+        {
+          $_SESSION['session_id']=$row['Admin_id'];
+          $_SESSION['session_name']=$row['Admin_uname'];
+          header("location:Dashboard.php");
+            
+        } else
+        {
+            echo"<script>alert('Entered Username or Password is not correct') </script>";
+        }
+    }
+        
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,8 +53,8 @@
                         <div class="page-links">
                             <a href="Login.php" class="active">Login</a>
                         </div>
-                        <form>
-                            <input class="form-control" type="text" name="username" placeholder="E-mail Address" required>
+                        <form method="Post">
+                            <input class="form-control" type="text" name="username" placeholder="Username" required>
                             <input class="form-control" type="password" name="password" placeholder="Password" required>
                             <div class="form-button">
                                 <button id="submit" type="submit" class="ibtn">Login</button> <a href="Forgotpassword.php">Forgot password?</a>
