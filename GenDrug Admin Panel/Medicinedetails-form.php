@@ -9,17 +9,24 @@ if(!isset($_SESSION['session_id']))
 ?>
     <?php
 $con =mysqli_connect("localhost","root","","gendrug");
-if($_POST)
+if(isset($_POST['submit']))
     {
 $a=$_POST['productname'];
 $b=$_POST['productdetails'];
 $c=$_POST['price'];
 $d=$_POST['stock'];
-$insert=mysqli_query($con,"INSERT INTO medicinedetails(P_id,P_name,P_details,P_price,P_stock) VALUES ('','{$a}','{$b}','{$c}','{$d}')") or die("Error" .mysqli_error($con));
+$e="upload/".$_FILES['image']['name'];
+$insert=mysqli_query($con,"INSERT INTO medicinedetails(P_id,P_name,P_details,P_price,P_stock,P_photo) VALUES ('','{$a}','{$b}','{$c}','{$d}','{$e}')") or die("Error" .mysqli_error($con));
 if($insert)
 {
-	echo "<script> alert('Record inserted'); </script>";
-}
+        $fileprocess= move_uploaded_file($_FILES['image']['tmp_name'], $e);
+	if($fileprocess)
+        {
+           echo "<script> alert('Record inserted'); </script>";
+
+           
+        }
+}        
 else 
 {
 	echo "ERROR!!";
@@ -60,7 +67,7 @@ include 'header.php';
 				<div class="card-body">
 					<div class="px-3">
 
-                                            <form id="myform" class="form"method="POST">
+                                            <form id="myform" class="form" method="POST" enctype="multipart/form-data">
 							<div class="row justify-content-md-center">
 								<div class="col-md-6">
 									<div class="form-body">
@@ -82,6 +89,11 @@ include 'header.php';
                                                                                 <div class="form-group">
 											<label for="eventInput4">Stock</label>
 											<input type="number" id="eventInput4" class="form-control required" name="stock" >
+										</div>
+                                                                                
+                                                                                <div class="form-group">
+											<label for="eventInput5">Photo</label>
+											<input type="file" id="eventInput5" class="form-control required" name="image" >
 										</div>
                                                                                 
 
