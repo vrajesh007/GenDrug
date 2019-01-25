@@ -12,7 +12,7 @@ if($_POST)
         {
           $_SESSION['session_id']=$row['Admin_id'];
           $_SESSION['session_name']=$row['Admin_uname'];
-          header("location:Dashboard.php");
+          header("location:dashboard.php");
             
         } else
         {
@@ -51,7 +51,7 @@ if($_POST)
                     <div class="form-items">
                         
                         <div class="page-links">
-                            <a href="Login.php" class="active">Login</a>
+                            <a href="login.php" class="active">Login</a>
                         </div>
                         <form method="Post">
                             <input class="form-control" type="text" name="username" placeholder="Username" required>

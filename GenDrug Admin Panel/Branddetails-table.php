@@ -2,7 +2,7 @@
 session_start();
 if(!isset($_SESSION['session_id']))
     {
-        header("location:Login.php");
+        header("location:login.php");
     
     }
     
@@ -35,7 +35,7 @@ include 'sidebar.php' ;
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">Brand Details Table</h4>
-                    <a href="Branddetails-form.php"  class="btn btn-raised btn-info" style="float:right">Add</a>
+                    <a href="branddetails-form.php"  class="btn btn-raised btn-info" style="float:right">Add</a>
                    
                 </div>
                 <div class="card-body">
@@ -67,7 +67,7 @@ include 'sidebar.php' ;
                                echo"<tr class='table-primary'>";
                                     echo"<th scope='row'>{$row['Brand_id']}</th>";
                                     echo"<td>{$row['Brand_name']}</td>";
-                                    echo "<td> <a href='Branddetails-edit.php?editid=$row[0]' > <img src='img/edit.png' alternate='Edit' height='27' width='27'/>  </a> | <a href='Branddetails-table.php?did={$row['Brand_id']}' > <img src='img/delete.png' alternate='Delete' height='27' width='27'/> </a> </td>";
+                                    echo "<td> <a href='branddetails-edit.php?editid=$row[0]' > <img src='img/edit.png' alternate='Edit' height='27' width='27'/>  </a> | <a href='Branddetails-table.php?did={$row['Brand_id']}' > <img src='img/delete.png' alternate='Delete' height='27' width='27'/> </a> </td>";
                                 echo"</tr>";
                                 }
                            echo"</tbody>";

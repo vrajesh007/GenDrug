@@ -2,7 +2,7 @@
 session_start();
 if(!isset($_SESSION['session_id']))
     {
-        header("location:Login.php");
+        header("location:login.php");
     
     }
     
@@ -35,7 +35,7 @@ include 'sidebar.php' ;
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">Medicine Details Table</h4>
-                    <a href="Medicinedetails-form.php"  class="btn btn-raised btn-info"style="float:right">Add</a>
+                    <a href="medicinedetails-form.php"  class="btn btn-raised btn-info"style="float:right">Add</a>
                    
                 </div>
                 <div class="card-body">
@@ -73,7 +73,7 @@ include 'sidebar.php' ;
                                     echo"<td>{$row['P_price']}</td>";
                                     echo"<td>{$row['P_stock']}</td>";
                                     echo"<td><a href='{$row['P_photo']}'><img style= 'height:100px; width:100px;' src='{$row['P_photo']}'></td>";  
-                                    echo "<td> <a href='Medicinedetails-edit.php?editid=$row[0]' > <img src='img/edit.png' alternate='Edit' height='27' width='27'/>  </a> | <a href='Medicinedetails-table.php?did={$row['P_id']}' > <img src='img/delete.png' alternate='Delete' height='27' width='27'/> </a> </td>";
+                                    echo "<td> <a href='medicinedetails-edit.php?editid=$row[0]' > <img src='img/edit.png' alternate='Edit' height='27' width='27'/>  </a> | <a href='Medicinedetails-table.php?did={$row['P_id']}' > <img src='img/delete.png' alternate='Delete' height='27' width='27'/> </a> </td>";
                                 echo"</tr>";
                                 }
                                 

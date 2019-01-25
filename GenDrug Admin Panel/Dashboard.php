@@ -2,7 +2,7 @@
 session_start();
 if(!isset($_SESSION['session_id']))
     {
-        header("location:Login.php");
+        header("location:login.php");
     
     }
     
@@ -30,8 +30,8 @@ include 'sidebar.php' ;
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">Welcome to the Batcave.</h4>
-                    <a href="Changepassword.php" class="btn btn-raised btn-info" style="float:left">Change Password</a>  
-                     <a href="Logout.php" class="btn btn-raised btn-info" style="float:right">Logout</a>                    
+                    <a href="changepassword.php" class="btn btn-raised btn-info" style="float:left">Change Password</a>  
+                     <a href="logout.php" class="btn btn-raised btn-info" style="float:right">Logout</a>                    
                 </div>
                 <div class="card-body">
                     <div class="card-block">

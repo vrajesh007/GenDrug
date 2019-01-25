@@ -2,7 +2,7 @@
 session_start();
 if(!isset($_SESSION['session_id']))
     {
-        header("location:Login.php");
+        header("location:login.php");
     
     }
     
@@ -35,7 +35,7 @@ include 'sidebar.php' ;
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">Feedback Table</h4>
-                    <a href="Feedback-form.php"  class="btn btn-raised btn-info"style="float:right">Add</a>
+                    <a href="feedback-form.php"  class="btn btn-raised btn-info"style="float:right">Add</a>
                    
                 </div>
                 <div class="card-body">
@@ -69,7 +69,7 @@ include 'sidebar.php' ;
                                     echo"<td>{$row['Feedback']}</td>";
                                     echo"<td>{$row['Feedback_date']}</td>";
                                     echo"<td>{$row['Feedback_status']}</td>";  
-                                    echo "<td> <a href='Feedback-edit.php?editid=$row[0]' > <img src='img/edit.png' alternate='Edit' height='27' width='27'/>  </a> | <a href='Feedback-table.php?did={$row['Feedback_id']}' > <img src='img/delete.png' alternate='Delete' height='27' width='27'/> </a> </td>";
+                                    echo "<td> <a href='feedback-edit.php?editid=$row[0]' > <img src='img/edit.png' alternate='Edit' height='27' width='27'/>  </a> | <a href='Feedback-table.php?did={$row['Feedback_id']}' > <img src='img/delete.png' alternate='Delete' height='27' width='27'/> </a> </td>";
                                 echo"</tr>";
                                 }
                                 

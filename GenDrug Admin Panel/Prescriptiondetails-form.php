@@ -2,7 +2,7 @@
 session_start();
 if(!isset($_SESSION['session_id']))
     {
-        header("location:Login.php");
+        header("location:login.php");
     
     }
     
@@ -92,7 +92,7 @@ include 'header.php';
 								<button type="submit" class="btn btn-raised btn-primary"  name="submit" value='submit'>
 									<i class="fa fa-check-square-o"></i> Submit
 								</button>
-                                                            <a href="Prescriptiondetails-table.php"  class="btn btn-raised btn-dark">View Table</a>
+                                                            <a href="prescriptiondetails-table.php"  class="btn btn-raised btn-dark">View Table</a>
 							</div>
 						</form>	
 

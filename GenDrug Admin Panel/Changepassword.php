@@ -3,7 +3,7 @@ session_start();
 $con =mysqli_connect("localhost","root","","gendrug");
 if(!isset($_SESSION['session_id']))
     {
-        header("location:Login.php");
+        header("location:login.php");
     
     }
 if($_POST)

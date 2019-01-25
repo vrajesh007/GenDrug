@@ -2,7 +2,7 @@
 session_start();
 if(!isset($_SESSION['session_id']))
     {
-        header("location:Login.php");
+        header("location:login.php");
     
     }
     
@@ -35,7 +35,7 @@ include 'sidebar.php' ;
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">Supplier Details Table</h4>
-                    <a href="Supplierdetails-form.php"  class="btn btn-raised btn-info" style="float:right">Add</a>
+                    <a href="supplierdetails-form.php"  class="btn btn-raised btn-info" style="float:right">Add</a>
                    
                 </div>
                 <div class="card-body">
@@ -71,7 +71,7 @@ include 'sidebar.php' ;
                                     echo"<td>{$row['Supp_add']}</td>";
                                     echo"<td>{$row['Supp_phnum']}</td>"; 
                                     echo"<td>{$row['Supp_stock']}</td>";   
-                                    echo "<td> Edit | <a href='Supplierdetails-table.php?did={$row['Supp_id']}' > <img src='img/delete.png' alternate='Delete' height='27' width='27'/>  </a> </td>";
+                                    echo "<td> Edit | <a href='supplierdetails-table.php?did={$row['Supp_id']}' > <img src='img/delete.png' alternate='Delete' height='27' width='27'/>  </a> </td>";
                                 echo"</tr>";
                                 }
                                 
