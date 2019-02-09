@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".aboutus"
+    android:background="@drawable/medicallight"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="What is Generic Medicine?"
+        android:textColor="#ffffff"
+        android:textSize="24sp"
+        android:textStyle="bold|italic" />
+
+
+    <TextView
+        android:layout_width="385sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="A generic drug is a pharmaceutical drug that has the same chemical substance as the drug that was originally developed, patented and innovated."
+        android:textColor="#000000"
+        android:textSize="19sp" />
+
+    <TextView
+        android:layout_width="385sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="The generic drug has the same active pharmaceutical ingredient (API) as the original, but it may differ in characteristics such as manufacturing process, formulation, excipients, color, taste, and packaging. "
+        android:textColor="#000000"
+        android:textSize="19sp" />
+
+    <TextView
+        android:layout_width="385sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Cost is the main difference between generic and brand name prescription drugs."
+        android:textColor="#000000"
+        android:textSize="19sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="125dp"
+        android:text="Why GenDrug?"
+        android:textColor="#ffffff"
+        android:textSize="24sp"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:layout_width="385sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="GenDrug is an initiative that we took to provide Generic medicines in an easy way. "
+        android:textColor="#000000"
+        android:textSize="19sp" />
+
+</LinearLayout>

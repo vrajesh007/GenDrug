@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".signup"
     android:orientation="vertical"
-    android:background="#420F6C">
+    android:background="@drawable/medicallight">
 
 
 
@@ -16,7 +16,7 @@
         android:hint="Name"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
-        android:textColorHint="#ffffff"/>
+        android:textColorHint="#000000"/>
 
 
     <EditText
@@ -24,49 +24,49 @@
         android:layout_height="70dp"
         android:hint="Email"
         android:layout_gravity="center"
-        android:textColorHint="#ffffff"/>
+        android:textColorHint="#000000"/>
 
     <EditText
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:hint="Password"
         android:layout_gravity="center"
-        android:textColorHint="#ffffff"/>
+        android:textColorHint="#000000"/>
 
     <EditText
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:hint="Confirm Password"
         android:layout_gravity="center"
-        android:textColorHint="#ffffff"/>
+        android:textColorHint="#000000"/>
 
     <EditText
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:hint="Date Of Birth"
         android:layout_gravity="center"
-        android:textColorHint="#ffffff"/>
+        android:textColorHint="#000000"/>
 
     <EditText
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:hint="Phone Number"
         android:layout_gravity="center"
-        android:textColorHint="#ffffff"/>
+        android:textColorHint="#000000"/>
 
     <EditText
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:hint="Address Line1"
         android:layout_gravity="center"
-        android:textColorHint="#ffffff"/>
+        android:textColorHint="#000000"/>
 
     <EditText
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:hint="Address Line2"
         android:layout_gravity="center"
-        android:textColorHint="#ffffff"/>
+        android:textColorHint="#000000"/>
 
     <Button
         android:layout_width="wrap_content"
