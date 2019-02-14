@@ -15,6 +15,7 @@
     android:layout_height="match_parent"
     android:paddingTop="20dp">
     <ImageView
+        android:id="@+id/logo"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:src="@drawable/logo"
@@ -25,10 +26,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="0.25"
-        android:background="@drawable/medical"
+        android:background="@drawable/medicallight"
         android:orientation="vertical">
 
         <EditText
+            android:id="@+id/username"
             android:layout_width="300dp"
             android:layout_height="70dp"
             android:layout_gravity="center"
@@ -37,6 +39,7 @@
             android:textColorHint="#000000" />
 
         <EditText
+            android:id="@+id/password"
             android:layout_width="300dp"
             android:layout_height="70dp"
             android:layout_gravity="center"
@@ -44,6 +47,7 @@
             android:textColorHint="#000000" />
 
         <Button
+            android:id="@+id/login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -53,6 +57,7 @@
             android:textColor="#000000" />
 
         <TextView
+            android:id="@+id/forgotp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
@@ -61,6 +66,7 @@
             android:textColor="#000000" />
 
         <Button
+            android:id="@+id/createacc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
