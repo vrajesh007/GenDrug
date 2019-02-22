@@ -16,7 +16,13 @@
         <activity android:name=".categorylist" />
         <activity
             android:name=".splash"
-            android:theme="@style/NoTheme" />
+            android:theme="@style/NoTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".aboutus"
             android:label="About Us" />
@@ -31,11 +37,6 @@
         <activity
             android:name=".login"
             android:theme="@style/NoTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
     </application>
