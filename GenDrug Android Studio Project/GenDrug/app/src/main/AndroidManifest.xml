@@ -9,7 +9,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".splash"
+        <activity
+            android:name=".Navigationactivity"
+            android:label="@string/title_activity_navigationactivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".categorylist" />
+        <activity
+            android:name=".splash"
+            android:theme="@style/NoTheme" />
+        <activity
+            android:name=".aboutus"
+            android:label="About Us" />
+        <activity
+            android:name=".forgotpassword"
+            android:label="Forgot Password"
+            android:parentActivityName=".login" />
+        <activity
+            android:name=".signup"
+            android:label="SignUp"
+            android:parentActivityName=".login" />
+        <activity
+            android:name=".login"
             android:theme="@style/NoTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,20 +37,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".aboutus"
-            android:label="About Us"></activity>
-        <activity
-            android:name=".forgotpassword"
-            android:label="Forgot Password"></activity>
-        <activity
-            android:name=".signup"
-            android:label="SignUp">
-
-        </activity>
-        <activity
-            android:name=".login"
-            android:theme="@style/NoTheme" />
         <activity android:name=".MainActivity" />
     </application>
 
