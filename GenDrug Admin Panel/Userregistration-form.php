@@ -18,7 +18,8 @@ $d=$_POST['email'];
 $e=$_POST['password'];
 $f=$_POST['confirmpassword'];
 $g=$_POST['address'];
-$insert=mysqli_query($con,"INSERT INTO userregistration(U_id,U_name,Gender,Phonenum,Email,Password,Conpassword,Address) VALUES ('','{$a}','{$b}','{$c}','{$d}','{$e}','{$f}','{$g}')") or die("Error" .mysqli_error($con));
+$h=$_POST['dob'];
+$insert=mysqli_query($con,"INSERT INTO userregistration(U_id,U_name,Gender,DOB,Phonenum,Email,Password,Conpassword,Address) VALUES ('','{$a}','{$b}','{$h}','{$c}','{$d}','{$e}','{$f}','{$g}')") or die("Error" .mysqli_error($con));
 if($insert)
 {
 	echo "<script> alert('Record inserted'); </script>";
@@ -83,6 +84,11 @@ include 'header.php';
                                                                                     <label class="custom-control-label" for="customRadioInline2">Female</label>
                                                                                 </div>
 											</div>
+										</div>
+                                                                            
+                                                                                <div class="form-group">
+											<label for="eventInput1">Date of Birth</label>
+											<input type="date" id="eventInput6" class="form-control required"  name="dob">
 										</div>
 
 										<div class="form-group">

@@ -15,6 +15,7 @@ if ($count > 0) {
          $data["U_id"] = $row["U_id"];
          $data["U_name"] = $row["U_name"];
          $data["Gender"] = $row["Gender"];
+         $data["DOB"] = $row["DOB"];
          $data["Phonenum"] = $row["Phonenum"];
          $data["Email"] = $row["Email"];
          $data["Address"] = $row["Address"];
