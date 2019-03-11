@@ -13,17 +13,17 @@ if (isset($_POST['Email']) && !empty($_POST['Email']) && isset($_POST['Password'
     $count = mysqli_num_rows($loginquery);
 
     if ($count > 0) {
-        $response['success'] = 1;
+        $response['flag'] = 1;
         $response['userdata'] = $fetchrow;
         $response['message'] = "Login Success";
     } else {
 
-        $response['success'] = 0;
+        $response['flag'] = 0;
         $response['message'] = "Login Failed";
     }
 } else {
 
-    $response['success'] = 0;
+    $response['flag'] = 0;
     $response['message'] = "Required fields missing";
 }
 echo json_encode($response);
