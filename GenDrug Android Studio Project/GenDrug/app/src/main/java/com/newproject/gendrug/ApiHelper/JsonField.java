@@ -13,4 +13,11 @@ public class JsonField {
     public static final String KEY_USER_ID = "U_id";
     public static final String FLAG = "flag";
     public static final String USER_ARRAY = "userdata";
+
+    public static final String CATEGORY_ARRAY = "Category";
+    public static final String CATEGORY_ID = "Categ_id";
+    public static final String CATEGORY_NAME = "Categ_name";
+
+
+
 }

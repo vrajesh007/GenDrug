@@ -15,16 +15,19 @@
             android:name=".Navigationactivity"
             android:label="@string/title_activity_navigationactivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".categorylist" />
-        <activity
-            android:name=".splash"
-            android:theme="@style/NoTheme">
+        <activity android:name=".categorylist" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+        <activity
+            android:name=".splash"
+            android:theme="@style/NoTheme">
+         </activity>
         <activity
             android:name=".aboutus"
             android:label="About Us" />
