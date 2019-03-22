@@ -44,5 +44,10 @@
             android:icon="@drawable/ic_aboutus"
             android:title="About Us" />
 
+        <item
+            android:id="@+id/logout"
+            android:title="LogOut"
+            />
+
 
 </menu>

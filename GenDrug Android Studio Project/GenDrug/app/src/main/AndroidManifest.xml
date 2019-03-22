@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.newproject.gendrug">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,38 +11,39 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".changepassword">
+
+        </activity>
         <activity
             android:name=".Navigationactivity"
             android:label="@string/title_activity_navigationactivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".categorylist" >
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".categorylist">
 
         </activity>
         <activity
             android:name=".splash"
-            android:theme="@style/NoTheme">
-         </activity>
+            android:theme="@style/NoTheme"></activity>
         <activity
             android:name=".aboutus"
             android:label="About Us" />
         <activity
             android:name=".forgotpassword"
             android:label="Forgot Password"
-            android:parentActivityName=".login" />
+            android:parentActivityName=".login" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".signup"
             android:label="SignUp"
             android:parentActivityName=".login" />
         <activity
             android:name=".login"
-            android:theme="@style/NoTheme">
-        </activity>
+            android:theme="@style/NoTheme"></activity>
         <activity android:name=".MainActivity" />
     </application>
 

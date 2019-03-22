@@ -17,18 +17,18 @@ if (isset($_POST['Email']) && !empty($_POST['Email'])) {
                 
         if ($sendemail == TRUE) {
 
-            $response["success"] = 1;
+            $response["flag"] = 1;
             $response["message"] = "Password Sent on Email ID";
         } else {
-            $response["success"] = 0;
+            $response["flag"] = 0;
             $response["message"] = "Email Function Not Working";
         }
     } else {
-        $response["success"] = 0;
+        $response["flag"] = 0;
         $response["message"] = "No Record found";
     }
 } else {
-    $response["success"] = 0;
+    $response["flag"] = 0;
     $response["message"] = "Required Field Missing";
 }
 echo json_encode($response);

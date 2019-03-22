@@ -15,6 +15,7 @@ if ($count > 0) {
          $data["P_id"] = $row["P_id"];
          $data["P_name"] = $row["P_name"];
          $data["P_details"] = $row["P_details"];
+         $data["P_category"] = $row["P_category"];
          $data["P_price"] = $row["P_price"];
          $data["P_stock"] = $row["P_stock"];
          $data["P_photo"] = $row["P_photo"];
@@ -23,12 +24,12 @@ if ($count > 0) {
     }
    
     $response['Medicine'] = $fetch_data;
-    $response['success'] = 1;
+    $response['flag'] = 1;
    
 
 } else {
     
-    $response['success'] = 0;
+    $response['flag'] = 0;
     $response["message"] = "No Record Found";
   
     

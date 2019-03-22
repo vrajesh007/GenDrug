@@ -13,10 +13,11 @@ if(isset($_POST['submit']))
     {
 $a=$_POST['productname'];
 $b=$_POST['productdetails'];
+$f=$_POST['productcategory'];
 $c=$_POST['price'];
 $d=$_POST['stock'];
 $e="upload/".$_FILES['image']['name'];
-$insert=mysqli_query($con,"INSERT INTO medicinedetails(P_id,P_name,P_details,P_price,P_stock,P_photo) VALUES ('','{$a}','{$b}','{$c}','{$d}','{$e}')") or die("Error" .mysqli_error($con));
+$insert=mysqli_query($con,"INSERT INTO medicinedetails(P_id,P_name,P_details,P_category,P_price,P_stock,P_photo) VALUES ('','{$a}','{$b}','{$f}','{$c}','{$d}','{$e}')") or die("Error" .mysqli_error($con));
 if($insert)
 {
         $fileprocess= move_uploaded_file($_FILES['image']['tmp_name'], $e);
@@ -79,6 +80,11 @@ include 'header.php';
                                                                                 <div class="form-group">
 									        <label for="userinput2">Product Details</label>
                                                                                 <textarea id="userinput2" rows="5" class="form-control border-primary required" name="productdetails" ></textarea>
+								                </div>
+                                                                            
+                                                                                <div class="form-group">
+									        <label for="userinput6">Product Category</label>
+                                                                                <input type="text" id="eventInput6" class="form-control required" name="productcategory">
 								                </div>
                                                                             
                                                                                 <div class="form-group">

@@ -42,8 +42,20 @@ public class UserSessionManager {
         mEditor.putString(JsonField.KEY_USER_PASSWORD, Password);
         mEditor.commit();
     }
+    public String getUserID(){
+        return mSharedPreferences.getString(JsonField.KEY_USER_ID,"");
+    }
 
-
-
-
+    public void logout(){
+        mEditor.remove(JsonField.KEY_USER_ID);
+        mEditor.remove(JsonField.KEY_USER_NAME);
+        mEditor.remove(JsonField.KEY_USER_GENDER);
+        mEditor.remove(JsonField.KEY_USER_EMAIL);
+        mEditor.remove(JsonField.KEY_USER_MOBILE_NUMBER);
+        mEditor.remove(JsonField.KEY_USER_DOB);
+        mEditor.remove(JsonField.KEY_USER_ADDRESS);
+        mEditor.remove(JsonField.KEY_USER_PASSWORD);
+        mEditor.remove(IS_LOGIN);
+        mEditor.commit();
+    }
 }

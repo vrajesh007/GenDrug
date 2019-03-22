@@ -18,6 +18,11 @@ public class JsonField {
     public static final String CATEGORY_ID = "Categ_id";
     public static final String CATEGORY_NAME = "Categ_name";
 
+    public static final String KEY_OLD_PASSWORD="opass";
+    public static final String KEY_NEW_PASSWORD="npass";
+    public static final String KEY_CONFIRM_PASSWORD="cpass";
+    public static final java.lang.String MESSAGE="message";
+
 
 
 }

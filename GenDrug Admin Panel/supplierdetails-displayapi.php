@@ -23,12 +23,12 @@ if ($count > 0) {
     }
    
     $response['Supplier Details'] = $fetch_data;
-    $response['success'] = 1;
+    $response['flag'] = 1;
    
 
 } else {
     
-    $response['success'] = 0;
+    $response['flag'] = 0;
     $response["message"] = "No Record Found";
   
     

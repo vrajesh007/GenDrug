@@ -1,6 +1,5 @@
 package com.newproject.gendrug;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,36 +24,38 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class forgotpassword extends AppCompatActivity implements View.OnClickListener {
-    EditText email;
-    Button send;
+public class changepassword extends AppCompatActivity implements View.OnClickListener {
+    EditText etEmail,etOpass,etNpass,etCpass;
+    Button submit;
+    private  UserSessionManager userSessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_forgotpassword);
+        setContentView(R.layout.activity_changepassword);
 
-        email = (EditText) findViewById(R.id.etmail);
-        send = (Button) findViewById(R.id.bsend);
-        send.setOnClickListener(this);
+        etEmail=findViewById(R.id.etEmail);
+        etOpass= findViewById(R.id.etOpass);
+        etNpass= findViewById(R.id.etNpass);
+        etCpass= findViewById(R.id.etCpass);
+        submit=findViewById(R.id.submit);
+        userSessionManager= new UserSessionManager(changepassword.this);
+        submit.setOnClickListener(this);
+
     }
-
 
     @Override
     public void onClick(View view) {
-        sendForgotPasswordRequest();
+        sendChangePasswordRequest();
 
-        Intent intent=new Intent(forgotpassword.this,login.class);
-        startActivity(intent);
     }
 
-
-
-    private void sendForgotPasswordRequest() {
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, WebURL.KEY_FORGOT_PASSWORD_URL, new Response.Listener<String>() {
+    private void sendChangePasswordRequest() {
+        StringRequest stringRequest=new StringRequest(Request.Method.POST, WebURL.KEY_CHANGE_PASSWORD_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                parseForgotPasswordResponse(response);
+                parseChangePasswordResponse(response);
+
             }
         }, new Response.ErrorListener() {
             @Override
@@ -62,28 +63,32 @@ public class forgotpassword extends AppCompatActivity implements View.OnClickLis
                 error.printStackTrace();
             }
         }){
+            @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-
-                Map<String,String> params = new HashMap<>();
-
-                params.put(JsonField.KEY_USER_EMAIL,email.getText().toString());
+                Map<String,String>params= new HashMap<>();
+                params.put(JsonField.KEY_USER_ID,userSessionManager.getUserID());
+                params.put(JsonField.KEY_USER_EMAIL,etEmail.getText().toString());
+                params.put(JsonField.KEY_OLD_PASSWORD,etOpass.getText().toString());
+                params.put(JsonField.KEY_NEW_PASSWORD,etNpass.getText().toString());
+                params.put(JsonField.KEY_CONFIRM_PASSWORD,etCpass.getText().toString());
 
                 return params;
             }
-
         };
-        RequestQueue requestQueue = Volley.newRequestQueue(forgotpassword.this);
+
+        RequestQueue requestQueue= Volley.newRequestQueue(changepassword.this);
         requestQueue.add(stringRequest);
     }
 
-    private void parseForgotPasswordResponse(String response) {
+    private void parseChangePasswordResponse(String response) {
         Log.d("RESPONSE",response);
         try {
             JSONObject jsonObject = new JSONObject(response);
             int flag= jsonObject.optInt(JsonField.FLAG);
             String message = jsonObject.optString(JsonField.MESSAGE);
             if(flag==1) {
-                Toast.makeText(this,"Password sent to your mail!",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"Password Changed Successfully",Toast.LENGTH_SHORT).show();
+
             }
             else{
                 Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
@@ -91,7 +96,5 @@ public class forgotpassword extends AppCompatActivity implements View.OnClickLis
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
     }
-
 }

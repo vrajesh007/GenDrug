@@ -13,9 +13,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class Navigationactivity extends AppCompatActivity
+
         implements NavigationView.OnNavigationItemSelectedListener {
+    UserSessionManager userSessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +26,7 @@ public class Navigationactivity extends AppCompatActivity
         setContentView(R.layout.activity_navigationactivity);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        userSessionManager=new UserSessionManager(Navigationactivity.this);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -95,7 +98,18 @@ public class Navigationactivity extends AppCompatActivity
             Intent intent= new Intent(Navigationactivity.this,aboutus.class);
             startActivity(intent);
 
+        }else if (id== R.id.logout){
+            if (userSessionManager.getLoginStatus())
+            {
+                Toast.makeText(this,"Welcome User", Toast.LENGTH_SHORT).show();
+            }
+            else
+            {
+                Intent intent= new Intent(Navigationactivity.this, login.class);
+                startActivity(intent);
+            }
         }
+        // logout.set
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
