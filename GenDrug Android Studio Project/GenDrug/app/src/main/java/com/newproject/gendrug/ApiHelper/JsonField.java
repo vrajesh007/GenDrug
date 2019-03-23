@@ -23,6 +23,18 @@ public class JsonField {
     public static final String KEY_CONFIRM_PASSWORD="cpass";
     public static final java.lang.String MESSAGE="message";
 
+    public static final String PRODUCT_ARRAY = "Medicine";
+    public static final String PRODUCT_ID = "P_id";
+    public static final String PRODUCT_NAME = "P_name";
+    public static final String PRODUCT_DETAILS = "P_details";
+    public static final String PRODUCT_CATEGORY = "P_category";
+    public static final String PRODUCT_PRICE = "P_price";
+    public static final String PRODUCT_STOCK = "P_stock";
+    public static final String PRODUCT_PHOTO = "P_photo";
+
+
+
+
 
 
 }
