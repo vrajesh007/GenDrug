@@ -120,7 +120,7 @@ public class login extends AppCompatActivity {
 
                     userSessionManager.setUserDetails(U_id,U_name,Gender,DOB,Email,Address,Password,Phonenum);
 
-                    Intent intent = new Intent(login.this,categorylist.class);
+                    Intent intent = new Intent(login.this,Navigationactivity.class);
                     finish();
                     startActivity(intent);
                     Toast.makeText(login.this, "Welcome", Toast.LENGTH_SHORT).show();

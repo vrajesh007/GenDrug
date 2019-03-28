@@ -13,6 +13,10 @@
             android:icon="@drawable/ic_product"
             android:title="Products" />
         <item
+            android:id="@+id/nav_category"
+            android:icon="@drawable/ic_list"
+            android:title="Categories" />
+        <item
             android:id="@+id/nav_symptom"
             android:icon="@drawable/ic_symptom"
             android:title="Symptoms" />

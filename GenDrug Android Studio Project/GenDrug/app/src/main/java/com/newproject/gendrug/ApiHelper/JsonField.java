@@ -32,6 +32,14 @@ public class JsonField {
     public static final String PRODUCT_STOCK = "P_stock";
     public static final String PRODUCT_PHOTO = "P_photo";
 
+    public static final String PRESCRIPTION_ARRAY = "Prescription";
+    public static final String PRESCRIPTION_ID = "Pres_id";
+    public static final String PRESCRIPTION_BNAME = "Pres_bname";
+    public static final String PRESCRIPTION_GNAME = "Pres_gname";
+    public static final String PRESCRIPTION_DETAILS = "Pres_details";
+    public static final String PRESCRIPTION_PRICE = "Pres_price";
+
+
 
 
 

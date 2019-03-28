@@ -10,6 +10,7 @@ public class WebURL {
     public static final String CATEGORY_URL = KEY_MAIN_URL + "categorydetails-displayapi.php";
     public static final String PRODUCT_URL = KEY_MAIN_URL + "medicinedetails-displayapi.php";
     public static final String PRODUCT_IMAGE_URL = "http://" + IP_ADDRESS + "/GenDrug/";
+    public static final String PRESCRIPTION_URL = KEY_MAIN_URL + "prescriptiondetails-displayapi.php";
 
 
 

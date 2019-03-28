@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2019 at 01:34 PM
+-- Generation Time: Mar 28, 2019 at 12:51 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -196,9 +196,31 @@ CREATE TABLE `orderdetails` (
 
 CREATE TABLE `prescriptiondetails` (
   `Pres_id` int(6) NOT NULL,
-  `Pres_name` varchar(10) NOT NULL,
-  `Pres_details` varchar(160) NOT NULL,
+  `Pres_bname` varchar(200) NOT NULL,
+  `Pres_gname` varchar(200) NOT NULL,
+  `Pres_details` varchar(200) NOT NULL,
   `Pres_price` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `prescriptiondetails`
+--
+
+INSERT INTO `prescriptiondetails` (`Pres_id`, `Pres_bname`, `Pres_gname`, `Pres_details`, `Pres_price`) VALUES
+(1, 'Fosamax', 'alendronate', 'Alendronate is used to prevent and treat certain types of bone loss (osteoporosis) in adults. Osteoporosis causes bones to become thinner and break more easily.', 104),
+(2, 'Glucophage', 'metformin', 'Metformin is used with a proper diet and exercise program and possibly with other medications to control high blood sugar. It is used in patients with type 2 diabetes. Controlling high blood sugar hel', 105);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `prescriptioninsert`
+--
+
+CREATE TABLE `prescriptioninsert` (
+  `Pinsert_id` int(11) NOT NULL,
+  `Pinsert_name` varchar(200) NOT NULL,
+  `Pinsert_photo` varchar(200) NOT NULL,
+  `Pinsert_email` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -322,6 +344,12 @@ ALTER TABLE `prescriptiondetails`
   ADD PRIMARY KEY (`Pres_id`);
 
 --
+-- Indexes for table `prescriptioninsert`
+--
+ALTER TABLE `prescriptioninsert`
+  ADD PRIMARY KEY (`Pinsert_id`);
+
+--
 -- Indexes for table `shippingstatus`
 --
 ALTER TABLE `shippingstatus`
@@ -401,7 +429,13 @@ ALTER TABLE `orderdetails`
 -- AUTO_INCREMENT for table `prescriptiondetails`
 --
 ALTER TABLE `prescriptiondetails`
-  MODIFY `Pres_id` int(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `Pres_id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `prescriptioninsert`
+--
+ALTER TABLE `prescriptioninsert`
+  MODIFY `Pinsert_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `shippingstatus`

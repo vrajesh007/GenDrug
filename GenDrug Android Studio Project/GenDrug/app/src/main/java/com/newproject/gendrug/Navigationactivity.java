@@ -79,10 +79,18 @@ public class Navigationactivity extends AppCompatActivity
         if (id == R.id.nav_home) {
 
         } else if (id == R.id.nav_product) {
+            Intent intent = new Intent(Navigationactivity.this, productlist.class);
+            startActivity(intent);
+
+        }   else if (id == R.id.nav_category) {
+                Intent intent= new Intent(Navigationactivity.this,categorylist.class);
+                startActivity(intent);
 
         } else if (id == R.id.nav_symptom) {
 
         } else if (id == R.id.nav_prescription) {
+            Intent intent= new Intent(Navigationactivity.this,prescription.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_cart) {
 
@@ -101,7 +109,7 @@ public class Navigationactivity extends AppCompatActivity
         }else if (id== R.id.logout){
             if (userSessionManager.getLoginStatus())
             {
-                Toast.makeText(this,"Welcome User", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"Logged out", Toast.LENGTH_SHORT).show();
             }
             else
             {

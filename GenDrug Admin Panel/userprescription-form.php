@@ -9,17 +9,22 @@ if(!isset($_SESSION['session_id']))
 ?>
  <?php
 $con =mysqli_connect("localhost","root","","gendrug");
-if($_POST)
+if(isset($_POST['submit']))
     {
-$a=$_POST['prescribedbrandedname'];
-$b=$_POST['prescribeddetails'];
-$c=$_POST['price'];
-$d=$_POST['prescribedgenericname'];
-$insert=mysqli_query($con,"INSERT INTO prescriptiondetails(Pres_id,Pres_bname,Pres_gname,Pres_details,Pres_price) VALUES ('','{$a}','{$d}','{$b}','{$c}')") or die("Error" .mysqli_error($con));
+$a=$_POST['presinsertname'];
+$b="upload/".$_FILES['image']['name'];
+$c=$_POST['presinsertemail'];
+$insert=mysqli_query($con,"INSERT INTO prescriptioninsert(Pinsert_name,Pinsert_photo,Pinsert_email) VALUES ('{$a}','{$b}','{$c}')") or die("Error" .mysqli_error($con));
 if($insert)
 {
-	echo "<script> alert('Record inserted'); </script>";
-}
+        $fileprocess= move_uploaded_file($_FILES['image']['tmp_name'], $b);
+	if($fileprocess)
+        {
+           echo "<script> alert('Record inserted'); </script>";
+
+           
+        }
+}    
 else 
 {
 	echo "ERROR!!";
@@ -60,27 +65,24 @@ include 'header.php';
 				<div class="card-body">
 					<div class="px-3">
 
-                                            <form id="myform" class="form"method="POST">
+                                            <form id="myform" class="form" method="POST" enctype="multipart/form-data">
 							<div class="row justify-content-md-center">
 								<div class="col-md-6">
 									<div class="form-body">
 										<div class="form-group">
-											<label for="eventInput1">Prescribed Branded Medicine Name</label>
-											<input type="text" id="eventInput1" class="form-control required"  name="prescribedbrandedname">
+											<label for="eventInput1">Prescribed Medicine Name</label>
+											<input type="text" id="eventInput1" class="form-control required"  name="presinsertname">
 										</div>
                                                                                 
                                                                                 <div class="form-group">
-											<label for="eventInput4">Prescribed Generic Medicine Name</label>
-											<input type="text" id="eventInput4" class="form-control required"  name="prescribedgenericname">
+											<label for="eventInput2">Photo</label>
+											<input type="file" id="eventInput2" class="form-control required"  name="image">
 										</div>
-                                                                                <div class="form-group">
-									        <label for="userinput2">Prescribed Medicine Details</label>
-                                                                                <textarea id="userinput2" rows="5" class="form-control border-primary required" name="prescribeddetails" ></textarea>
-								                </div>
+                                                                                
                                                                             
                                                                                 <div class="form-group">
-											<label for="eventInput3">Price</label>
-											<input type="number" id="eventInput3" class="form-control required" name="price" >
+											<label for="eventInput3">Email</label>
+											<input type="email" id="eventInput3" class="form-control required" name="presinsertemail" >
 										</div>
                                                                                 
 
@@ -97,7 +99,7 @@ include 'header.php';
 								<button type="submit" class="btn btn-raised btn-primary"  name="submit" value='submit'>
 									<i class="fa fa-check-square-o"></i> Submit
 								</button>
-                                                            <a href="prescriptiondetails-table.php"  class="btn btn-raised btn-dark">View Table</a>
+                                                            <a href="userprescription-table.php"  class="btn btn-raised btn-dark">View Table</a>
 							</div>
 						</form>	
 

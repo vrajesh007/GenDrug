@@ -4,7 +4,7 @@ $con =mysqli_connect("localhost","root","","gendrug");
 $response = array(); 
 
 
-$query = mysqli_query($con, "SELECT * FROM prescriptiondetails ") or die(mysqli_error($con));
+$query = mysqli_query($con, "SELECT * FROM userprescription ") or die(mysqli_error($con));
 
 $count = mysqli_num_rows($query);
 
@@ -12,16 +12,15 @@ $count = mysqli_num_rows($query);
 if ($count > 0) {
     while ($row = mysqli_fetch_array($query)) {
        
-         $data["Pres_id"] = $row["Pres_id"];
-         $data["Pres_bname"] = $row["Pres_bname"];
-         $data["Pres_gname"] = $row["Pres_gname"];
-         $data["Pres_details"] = $row["Pres_details"];
-         $data["Pres_price"] = $row["Pres_price"];
+         $data["Pinsert_id"] = $row["Pinsert_id"];
+         $data["Pinsert_name"] = $row["Pinsert_name"];
+         $data["Pinsert_photo"] = $row["Pinsert_photo"];
+         $data["Pinsert_email"] = $row["Pinsert_email"];
          
          $fetch_data[]= $data;
     }
    
-    $response['Prescription'] = $fetch_data;
+    $response['Prescriptioninsert'] = $fetch_data;
     $response['flag'] = 1;
    
 
@@ -36,4 +35,5 @@ if ($count > 0) {
 // print_r($response);
 
 echo json_encode($response);
+
 
