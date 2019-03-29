@@ -61,7 +61,7 @@ public class login extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        login .setOnClickListener(new View.OnClickListener() {
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 sendLoginRequest();

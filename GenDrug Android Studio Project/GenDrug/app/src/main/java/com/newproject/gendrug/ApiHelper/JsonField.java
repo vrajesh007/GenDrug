@@ -39,6 +39,12 @@ public class JsonField {
     public static final String PRESCRIPTION_DETAILS = "Pres_details";
     public static final String PRESCRIPTION_PRICE = "Pres_price";
 
+    public static final String UPLOAD_ARRAY = "Prescriptioninsert";
+    public static final String UPLOAD_NAME = "Pinsert_name";
+    public static final String UPLOAD_PHOTO = "Pinsert_photo";
+    public static final String UPLOAD_EMAIL = "Pinsert_email";
+
+
 
 
 

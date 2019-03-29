@@ -55,6 +55,22 @@
                   </li>
                   </ul>
               </li>  
+              <li class="has-sub nav-item"><a href="#"><span data-i18n="" class="menu-title">Prescription Details</span></a>  
+                  <ul class="menu-content">  
+                      <li><a href="prescriptiondetails-form.php" class="menu-item"> <i class="ft-edit"></i>Add</a>
+                  </li>
+                  <li><a href="prescriptiondetails-table.php" class="menu-item"> <i class="ft-grid"></i>View</a>  
+                  </li>
+                  </ul>
+              </li>  
+              <li class="has-sub nav-item"><a href="#"><span data-i18n="" class="menu-title">Upload Prescription</span></a>  
+                  <ul class="menu-content">  
+                      <li><a href="userprescription-form.php" class="menu-item"> <i class="ft-edit"></i>Add</a>
+                  </li>
+                  <li><a href="userprescription-table.php" class="menu-item"> <i class="ft-grid"></i>View</a>  
+                  </li>
+                  </ul>
+              </li>  
               
 
               <li class="has-sub nav-item"><a href="#"><span data-i18n="" class="menu-title">Medicine Details</span></a>  

@@ -54,8 +54,10 @@ include 'sidebar.php' ;
                              
                                 echo"<tr>";
                                 echo"<th>Number</th>";
+                                echo"<th>Order Products</th>";
                                 echo"<th>Order Quantity</th>";
-                                echo"<th>Order Amount</th>";   
+                                echo"<th>Order Amount</th>"; 
+                                echo"<th>Order Date</th>";
                                 echo"<th>Actions</th>";
                                 echo"</tr>";
                             echo"</thead>";
@@ -65,8 +67,10 @@ include 'sidebar.php' ;
                                 { 
                                echo"<tr class='table-primary'>";
                                     echo"<th scope='row'>{$row['Order_id']}</th>";
+                                    echo"<td>{$row['Order_products']}</td>";
                                     echo"<td>{$row['Order_quantity']}</td>";
                                     echo"<td>{$row['Order_amount']}</td>";
+                                    echo"<td>{$row['Order_date']}</td>";
                                     echo "<td> <a href='orderdetails-edit.php?editid=$row[0]' > <img src='img/edit.png' alternate='Edit' height='27' width='27'/>  </a>| <a href='Orderdetails-table.php?did={$row['Order_id']}' > <img src='img/delete.png' alternate='Delete' height='27' width='27'/>  </a> </td>";
                                 echo"</tr>";
                                 }

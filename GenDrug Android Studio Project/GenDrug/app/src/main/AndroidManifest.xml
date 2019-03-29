@@ -11,31 +11,39 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".prescription"
-            android:parentActivityName=".Navigationactivity">
+        <activity android:name=".uploadprescription">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
         </activity>
         <activity
-            android:name=".productlist"
+            android:name=".prescription"
             android:parentActivityName=".Navigationactivity"></activity>
+        <activity
+            android:name=".productlist"
+            android:parentActivityName=".Navigationactivity" />
         <activity android:name=".changepassword" />
         <activity
             android:name=".Navigationactivity"
-            android:label="@string/title_activity_navigationactivity"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
-        <activity android:name=".categorylist" />
+            android:label="GenDrug"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".categorylist"
+            android:parentActivityName=".Navigationactivity"></activity>
         <activity
             android:name=".splash"
             android:theme="@style/NoTheme" />
         <activity
             android:name=".aboutus"
             android:label="About Us"
-            android:parentActivityName=".Navigationactivity"></activity>
+            android:parentActivityName=".Navigationactivity" />
         <activity
             android:name=".forgotpassword"
             android:label="Forgot Password"
-            android:parentActivityName=".login"></activity>
+            android:parentActivityName=".login" />
         <activity
             android:name=".signup"
             android:label="SignUp"
@@ -43,11 +51,6 @@
         <activity
             android:name=".login"
             android:theme="@style/NoTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
         <activity android:name=".MainActivity" />

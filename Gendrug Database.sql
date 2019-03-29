@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2019 at 12:51 PM
+-- Generation Time: Mar 29, 2019 at 12:40 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -184,8 +184,10 @@ INSERT INTO `medicinedetails` (`P_id`, `P_name`, `P_details`, `P_category`, `P_p
 
 CREATE TABLE `orderdetails` (
   `Order_id` int(6) NOT NULL,
+  `Order_products` varchar(200) NOT NULL,
   `Order_quantity` int(10) NOT NULL,
-  `Order_amount` int(50) NOT NULL
+  `Order_amount` int(50) NOT NULL,
+  `Order_date` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------

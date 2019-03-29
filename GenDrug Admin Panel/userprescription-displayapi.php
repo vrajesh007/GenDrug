@@ -4,7 +4,7 @@ $con =mysqli_connect("localhost","root","","gendrug");
 $response = array(); 
 
 
-$query = mysqli_query($con, "SELECT * FROM userprescription ") or die(mysqli_error($con));
+$query = mysqli_query($con, "SELECT * FROM prescriptioninsert ") or die(mysqli_error($con));
 
 $count = mysqli_num_rows($query);
 

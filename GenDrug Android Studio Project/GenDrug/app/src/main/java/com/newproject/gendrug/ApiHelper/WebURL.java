@@ -11,6 +11,7 @@ public class WebURL {
     public static final String PRODUCT_URL = KEY_MAIN_URL + "medicinedetails-displayapi.php";
     public static final String PRODUCT_IMAGE_URL = "http://" + IP_ADDRESS + "/GenDrug/";
     public static final String PRESCRIPTION_URL = KEY_MAIN_URL + "prescriptiondetails-displayapi.php";
+    public static final String UPLOAD_PRESCRIPTION_URL = KEY_MAIN_URL + "uploadprescription-api.php";
 
 
 
