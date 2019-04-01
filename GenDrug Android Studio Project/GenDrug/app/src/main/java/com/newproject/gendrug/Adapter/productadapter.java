@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.newproject.gendrug.ApiHelper.WebURL;
+import com.newproject.gendrug.Listener.ProductDetailClickListener;
 import com.newproject.gendrug.Model.category;
 import com.newproject.gendrug.Model.product;
 import com.newproject.gendrug.R;
@@ -23,6 +24,15 @@ public class productadapter extends RecyclerView.Adapter<productadapter.ViewHold
 
     Context context;
     ArrayList<product> products;
+
+    ProductDetailClickListener productDetailClickListener;
+    public ProductDetailClickListener getProductDetailClickListener(){
+        return productDetailClickListener;
+    }
+
+    public void setProductDetailClickListener(ProductDetailClickListener productDetailClickListener){
+        this.productDetailClickListener = productDetailClickListener;
+    }
 
     public productadapter(Context context, ArrayList<product> products) {
         this.context = context;
@@ -40,11 +50,19 @@ public class productadapter extends RecyclerView.Adapter<productadapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int i) {
         product Product = products.get(i);
         String name=Product.getP_name();
         viewHolder.tvmedname.setText(name);
         Glide.with(context).load(WebURL.PRODUCT_IMAGE_URL+Product.getP_photo()).into(viewHolder.ivmedimage);
+
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ProductDetailClickListener listener = getProductDetailClickListener();
+                listener.setOnItemClicked(products,i);
+            }
+        });
     }
 
     @Override

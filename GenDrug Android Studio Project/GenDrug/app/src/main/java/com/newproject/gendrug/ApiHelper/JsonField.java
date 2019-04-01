@@ -44,6 +44,13 @@ public class JsonField {
     public static final String UPLOAD_PHOTO = "Pinsert_photo";
     public static final String UPLOAD_EMAIL = "Pinsert_email";
 
+    public static final String ORDER_ARRAY = "OrderDetails";
+    public static final String ORDER_ID = "Order_id";
+    public static final String ORDER_PRODUCTS = "Order_products";
+    public static final String ORDER_QUANTITY = "Order_quantity";
+    public static final String ORDER_AMOUNT = "Order_amount";
+    public static final String ORDER_DATE = "Order_date";
+
 
 
 

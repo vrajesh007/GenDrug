@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2019 at 12:40 PM
+-- Generation Time: Apr 01, 2019 at 03:15 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -189,6 +189,15 @@ CREATE TABLE `orderdetails` (
   `Order_amount` int(50) NOT NULL,
   `Order_date` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `orderdetails`
+--
+
+INSERT INTO `orderdetails` (`Order_id`, `Order_products`, `Order_quantity`, `Order_amount`, `Order_date`) VALUES
+(1, 'Humstard 3', 20, 5000, '29/03/2019'),
+(2, 'TUSQ DX CO', 10, 3000, '01/04/2019'),
+(3, 'AL TOTAL ', 5, 2000, '01/04/2019');
 
 -- --------------------------------------------------------
 
@@ -425,7 +434,7 @@ ALTER TABLE `medicinedetails`
 -- AUTO_INCREMENT for table `orderdetails`
 --
 ALTER TABLE `orderdetails`
-  MODIFY `Order_id` int(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `Order_id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `prescriptiondetails`

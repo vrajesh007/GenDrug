@@ -1,5 +1,6 @@
 package com.newproject.gendrug;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,6 +16,7 @@ import com.android.volley.toolbox.Volley;
 import com.newproject.gendrug.Adapter.productadapter;
 import com.newproject.gendrug.ApiHelper.JsonField;
 import com.newproject.gendrug.ApiHelper.WebURL;
+import com.newproject.gendrug.Listener.ProductDetailClickListener;
 import com.newproject.gendrug.Model.product;
 
 import org.json.JSONArray;
@@ -23,7 +25,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class productlist extends AppCompatActivity {
+public class productlist extends AppCompatActivity implements ProductDetailClickListener {
     ArrayList<product> products;
     RecyclerView rvproduct;
 
@@ -87,6 +89,7 @@ public class productlist extends AppCompatActivity {
                         products.add(prod1);
                     }
                     productadapter proadapter= new productadapter(productlist.this,products);
+                    proadapter.setProductDetailClickListener(productlist.this);
                     rvproduct.setAdapter(proadapter);
                 }
 
@@ -95,6 +98,16 @@ public class productlist extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+    }
+
+    @Override
+    public void setOnItemClicked(ArrayList<product> products, int i) {
+        Intent intent= new Intent(productlist.this,productDetailActivity.class);
+        product Product = products.get(i);
+        String id=Product.getP_id();
+        intent.putExtra(JsonField.PRODUCT_ID,id);
+        startActivity(intent);
 
     }
 }

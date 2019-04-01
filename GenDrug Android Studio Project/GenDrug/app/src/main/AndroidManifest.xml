@@ -6,22 +6,17 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_foreground"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".uploadprescription">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
+        <activity android:name=".productDetailActivity"></activity>
+        <activity android:name=".orderdetails"></activity>
+        <activity android:name=".uploadprescription"></activity>
         <activity
             android:name=".prescription"
-            android:parentActivityName=".Navigationactivity"></activity>
+            android:parentActivityName=".Navigationactivity" />
         <activity
             android:name=".productlist"
             android:parentActivityName=".Navigationactivity" />
@@ -29,10 +24,16 @@
         <activity
             android:name=".Navigationactivity"
             android:label="GenDrug"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".categorylist"
-            android:parentActivityName=".Navigationactivity"></activity>
+            android:parentActivityName=".Navigationactivity" />
         <activity
             android:name=".splash"
             android:theme="@style/NoTheme" />
@@ -50,9 +51,7 @@
             android:parentActivityName=".login" />
         <activity
             android:name=".login"
-            android:theme="@style/NoTheme">
-
-        </activity>
+            android:theme="@style/NoTheme" />
         <activity android:name=".MainActivity" />
     </application>
 
