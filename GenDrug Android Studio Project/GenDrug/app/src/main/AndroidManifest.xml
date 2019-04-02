@@ -11,9 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".productDetailActivity"></activity>
-        <activity android:name=".orderdetails"></activity>
-        <activity android:name=".uploadprescription"></activity>
+        <activity android:name=".youraccount"
+            android:parentActivityName=".Navigationactivity"></activity>
+        <activity android:name=".productDetailActivity"
+            android:parentActivityName=".productlist"/>
+        <activity android:name=".orderdetails"
+            android:parentActivityName=".youraccount"/>
+        <activity android:name=".uploadprescription"
+            android:parentActivityName=".Navigationactivity"/>
         <activity
             android:name=".prescription"
             android:parentActivityName=".Navigationactivity" />

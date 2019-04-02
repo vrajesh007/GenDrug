@@ -13,6 +13,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
 import com.newproject.gendrug.ApiHelper.JsonField;
 import com.newproject.gendrug.ApiHelper.WebURL;
 
@@ -87,9 +88,9 @@ public class productDetailActivity extends AppCompatActivity {
                         tvproductname.setText(productname);
                         tvproductdetails.setText(productdetails);
                         tvproductcategory.setText(productcategory);
-                        tvproductprice.setText(productprice);
+                        tvproductprice.setText("Rs "+ productprice);
                         tvproductstock.setText(productstock);
-                        //ivmedimage
+                        Glide.with(productDetailActivity.this).load(WebURL.PRODUCT_IMAGE_URL+productphoto).into(ivmedimage);
 
                     }
                 }

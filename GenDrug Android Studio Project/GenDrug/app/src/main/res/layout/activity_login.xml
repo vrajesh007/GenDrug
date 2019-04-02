@@ -26,8 +26,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="0.25"
-        android:background="@drawable/medicallight"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/lightmedicaltheme">
 
         <EditText
             android:id="@+id/email"
@@ -36,7 +36,8 @@
             android:layout_gravity="center"
             android:layout_marginTop="100dp"
             android:hint="Enter Email"
-            android:textColorHint="#000000" />
+            android:textColorHint="#000000"
+            />
 
         <EditText
             android:id="@+id/password"
@@ -45,7 +46,8 @@
             android:layout_gravity="center"
             android:hint="Enter Password"
             android:textColorHint="#000000"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword"
+            />
 
         <Button
             android:id="@+id/login"
@@ -53,9 +55,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="70dp"
-            android:background="#b2c3d5"
+            android:background="#FF0000"
             android:text="Login"
-            android:textColor="#000000" />
+            android:textColor="#ffffff" />
 
         <TextView
             android:id="@+id/forgotp"
@@ -63,8 +65,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:paddingRight="18dp"
-            android:text="Forgot Password?"
-            android:textColor="#000000" />
+            android:text="   Forgot Password?"
+            android:textColor="#000000"
+            android:textStyle="bold"/>
 
         <Button
             android:id="@+id/createacc"
@@ -72,6 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:text="Create Account" />
+            android:text="   Create Account   "
+            android:background="#FFD700" />
     </LinearLayout>
     </LinearLayout>

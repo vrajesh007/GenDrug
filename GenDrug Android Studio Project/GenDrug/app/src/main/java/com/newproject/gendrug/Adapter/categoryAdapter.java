@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.newproject.gendrug.Listener.ProductDetailClickListener;
+import com.newproject.gendrug.Listener.productsbycategory;
 import com.newproject.gendrug.Model.category;
 import com.newproject.gendrug.R;
 
@@ -16,6 +18,18 @@ import java.util.ArrayList;
 public class categoryAdapter extends RecyclerView.Adapter<categoryAdapter.ViewHolder> {
         Context context;
         ArrayList<category> listCategory;
+
+
+    productsbycategory productsByCategory;
+
+    public productsbycategory getproductsbycategory() {
+        return productsByCategory;
+    }
+
+    public void setproductsbycategory(productsbycategory productsByCategory){
+        this.productsByCategory = productsByCategory;
+    }
+
 
     public categoryAdapter(Context context, ArrayList<category> listCategory) {
         this.context = context;
@@ -32,10 +46,19 @@ public class categoryAdapter extends RecyclerView.Adapter<categoryAdapter.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         category Category = listCategory.get(position);
         String name = Category.getCateg_name();
         holder.medname.setText(name);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                productsbycategory listener = getproductsbycategory();
+                listener.setoncategoryclicked(listCategory,position);
+
+
+            }
+        });
     }
 
     @Override

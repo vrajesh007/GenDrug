@@ -105,6 +105,9 @@ public class Navigationactivity extends AppCompatActivity
             startActivity(intent);
 
         }else if (id == R.id.nav_account) {
+            Intent intent = new Intent(Navigationactivity.this, youraccount.class);
+            startActivity(intent);
+
 
         }else if (id == R.id.nav_feedback) {
 

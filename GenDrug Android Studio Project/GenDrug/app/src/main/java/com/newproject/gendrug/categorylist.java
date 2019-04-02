@@ -1,5 +1,6 @@
 package com.newproject.gendrug;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -16,6 +17,7 @@ import com.android.volley.toolbox.Volley;
 import com.newproject.gendrug.Adapter.categoryAdapter;
 import com.newproject.gendrug.ApiHelper.JsonField;
 import com.newproject.gendrug.ApiHelper.WebURL;
+import com.newproject.gendrug.Listener.productsbycategory;
 import com.newproject.gendrug.Model.category;
 
 import org.json.JSONArray;
@@ -25,7 +27,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 
-public class categorylist extends AppCompatActivity {
+public class categorylist extends AppCompatActivity implements productsbycategory {
     RecyclerView rvcategory;
     ArrayList<category> listCategory;
 
@@ -79,12 +81,21 @@ public class categorylist extends AppCompatActivity {
                         cat1.setCateg_name(categoryname);
                         listCategory.add(cat1);
                     }
+
                 }
                 categoryAdapter catAdapter = new categoryAdapter(categorylist.this,listCategory);
+                catAdapter.setproductsbycategory(categorylist.this);
                 rvcategory.setAdapter(catAdapter);
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void setoncategoryclicked(ArrayList<category> listCategory, int i) {
+        Intent intent= new Intent(categorylist.this,productlist.class);
+
+        startActivity(intent);
     }
 }
