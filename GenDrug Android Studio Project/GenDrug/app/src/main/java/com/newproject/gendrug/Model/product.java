@@ -2,7 +2,7 @@ package com.newproject.gendrug.Model;
 
 public class product {
 
-    String P_id,P_name,P_details,P_category,P_price,P_stock,P_photo;
+    String P_id,P_name,P_details,P_category,P_price,P_stock,P_photo,Categ_id;
 
     public String getP_id() { return P_id; }
     public void setP_id(String P_id) {
@@ -49,5 +49,11 @@ public class product {
     }
     public void setP_photo(String P_photo) {
         this.P_photo = P_photo;
+    }
+    public String getCateg_id() {
+        return Categ_id;
+    }
+    public void setCateg_id(String Categ_id) {
+        this.Categ_id = Categ_id;
     }
 }

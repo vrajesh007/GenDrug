@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -24,10 +25,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class productlist extends AppCompatActivity implements ProductDetailClickListener {
     ArrayList<product> products;
     RecyclerView rvproduct;
+    private String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,13 +39,42 @@ public class productlist extends AppCompatActivity implements ProductDetailClick
         setContentView(R.layout.activity_productlist);
         
         rvproduct=(RecyclerView) findViewById(R.id.rvproduct);
+
+        Intent intent=getIntent();
+        id=intent.getStringExtra(JsonField.CATEGORY_ID);
+
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(productlist.this);
         rvproduct.setLayoutManager(linearLayoutManager);
         
-        getproduct();
+       // getCategid(id);
+        getproduct(id);
     }
 
-    private void getproduct() {
+//    private void getCategid(final String id) {
+//     products= new ArrayList<>();
+//     StringRequest stringRequest = new StringRequest(Request.Method.POST, WebURL.PRODUCT_URL, new Response.Listener<String>() {
+//         @Override
+//         public void onResponse(String response) {
+//             parseJson(response.toString());
+//         }
+//     }, new Response.ErrorListener() {
+//         @Override
+//         public void onErrorResponse(VolleyError error) {
+//            error.printStackTrace();
+//         }
+//     }){
+//
+//         @Override
+//         protected Map<String, String> getParams() throws AuthFailureError {
+//             Map<String,String> map = new HashMap<>();
+//             map.put(JsonField.CATEGORY_ID,id);
+//             return map;
+//         }
+//     };
+//
+//    }
+
+    private void getproduct(final String id) {
         products = new ArrayList<>();
         StringRequest stringRequest = new StringRequest(Request.Method.POST, WebURL.PRODUCT_URL, new Response.Listener<String>() {
             @Override
@@ -54,7 +87,15 @@ public class productlist extends AppCompatActivity implements ProductDetailClick
                 error.printStackTrace();
 
             }
-        });
+        }) {
+
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> map = new HashMap<>();
+                map.put(JsonField.CATEGORY_ID, id);
+                return map;
+            }
+        };
         RequestQueue requestQueue = Volley.newRequestQueue(productlist.this);
         requestQueue.add(stringRequest);
     }

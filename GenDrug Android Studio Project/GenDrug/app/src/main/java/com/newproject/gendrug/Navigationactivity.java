@@ -87,6 +87,9 @@ public class Navigationactivity extends AppCompatActivity
                 startActivity(intent);
 
         } else if (id == R.id.nav_symptom) {
+            Intent intent= new Intent(Navigationactivity.this,symptomlist.class);
+            startActivity(intent);
+
 
         }else if (id == R.id.nav_upprescription) {
             Intent intent= new Intent(Navigationactivity.this,uploadprescription.class);

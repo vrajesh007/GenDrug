@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".youraccount"
     android:orientation="vertical"
-    android:background="@drawable/medicallight">
+    android:background="@drawable/lightmedicaltheme">
 
     <Button
         android:id="@+id/byourorders"

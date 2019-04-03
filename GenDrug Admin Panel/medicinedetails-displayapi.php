@@ -3,9 +3,16 @@ $con =mysqli_connect("localhost","root","","gendrug");
 
 $response = array(); 
 
+if(isset($_POST['Categ_id'])) {
+    
+    $categid= mysqli_real_escape_string($con,$_POST['Categ_id']);
+    
+    $query = mysqli_query($con, "SELECT * FROM medicinedetails where Categ_id='{$categid}'") or die(mysqli_error($con));   
+}
+else {
 
 $query = mysqli_query($con, "SELECT * FROM medicinedetails ") or die(mysqli_error($con));
-
+}
 $count = mysqli_num_rows($query);
 
 
@@ -19,6 +26,7 @@ if ($count > 0) {
          $data["P_price"] = $row["P_price"];
          $data["P_stock"] = $row["P_stock"];
          $data["P_photo"] = $row["P_photo"];
+         $data["Categ_id"] = $row["Categ_id"];
 
          $fetch_data[]= $data;
     }

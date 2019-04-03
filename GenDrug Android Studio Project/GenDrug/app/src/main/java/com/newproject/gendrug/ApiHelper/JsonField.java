@@ -32,6 +32,7 @@ public class JsonField {
     public static final String PRODUCT_STOCK = "P_stock";
     public static final String PRODUCT_PHOTO = "P_photo";
 
+
     public static final String PRESCRIPTION_ARRAY = "Prescription";
     public static final String PRESCRIPTION_ID = "Pres_id";
     public static final String PRESCRIPTION_BNAME = "Pres_bname";
@@ -51,11 +52,9 @@ public class JsonField {
     public static final String ORDER_AMOUNT = "Order_amount";
     public static final String ORDER_DATE = "Order_date";
 
-
-
-
-
-
+    public static final String SYMPTOM_ARRAY = "Symptom";
+    public static final String SYMPTOM_ID = "Symp_id";
+    public static final String SYMPTOM_NAME = "Symp_name";
 
 
 }

@@ -15,10 +15,13 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.newproject.gendrug.Adapter.categoryAdapter;
+import com.newproject.gendrug.Adapter.symptomAdapter;
 import com.newproject.gendrug.ApiHelper.JsonField;
 import com.newproject.gendrug.ApiHelper.WebURL;
 import com.newproject.gendrug.Listener.productsbycategory;
+import com.newproject.gendrug.Listener.productsbysymptom;
 import com.newproject.gendrug.Model.category;
+import com.newproject.gendrug.Model.symptom;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,27 +30,27 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 
-public class categorylist extends AppCompatActivity implements productsbycategory {
-    RecyclerView rvcategory;
-    ArrayList<category> listCategory;
+public class symptomlist extends AppCompatActivity implements productsbysymptom {
+    RecyclerView rvsymptom;
+    ArrayList<symptom> listSymptom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_categorylist);
+        setContentView(R.layout.activity_symptomlist);
 
-        rvcategory= (RecyclerView) findViewById(R.id.rvcategory);
-        LinearLayoutManager linearLayout=new LinearLayoutManager(categorylist.this);
-        rvcategory.setLayoutManager(linearLayout);
+        rvsymptom= (RecyclerView) findViewById(R.id.rvsymptom);
+        LinearLayoutManager linearLayout=new LinearLayoutManager(symptomlist.this);
+        rvsymptom.setLayoutManager(linearLayout);
 
-        getcategory();
+        getsymptom();
 
 
     }
 
-    private void getcategory() {
-        listCategory = new ArrayList<>();
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, WebURL.CATEGORY_URL, new Response.Listener<String>() {
+    private void getsymptom() {
+        listSymptom = new ArrayList<>();
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, WebURL.SYMPTOM_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 parseJson(response.toString());
@@ -59,7 +62,7 @@ public class categorylist extends AppCompatActivity implements productsbycategor
 
             }
         });
-        RequestQueue requestQueue = Volley.newRequestQueue(categorylist.this);
+        RequestQueue requestQueue = Volley.newRequestQueue(symptomlist.this);
         requestQueue.add(stringRequest);
     }
 
@@ -69,23 +72,23 @@ public class categorylist extends AppCompatActivity implements productsbycategor
             JSONObject jsonObject = new JSONObject(response);
             int flag = jsonObject.optInt(JsonField.FLAG);
             if (flag == 1){
-                JSONArray jsonArray = jsonObject.optJSONArray(JsonField.CATEGORY_ARRAY);
+                JSONArray jsonArray = jsonObject.optJSONArray(JsonField.SYMPTOM_ARRAY);
                 if (jsonArray.length() > 0){
                     for (int i=0; i<jsonArray.length();i++){
-                        JSONObject objcategory = jsonArray.optJSONObject(i);
-                        String categoryid  = objcategory.getString(JsonField.CATEGORY_ID);
-                        String categoryname  = objcategory.getString(JsonField.CATEGORY_NAME);
+                        JSONObject objsymptom = jsonArray.optJSONObject(i);
+                        String symptomid  = objsymptom.getString(JsonField.SYMPTOM_ID);
+                        String symptomname  = objsymptom.getString(JsonField.SYMPTOM_NAME);
 
-                        category cat1 = new category();
-                        cat1.setCateg_id(categoryid);
-                        cat1.setCateg_name(categoryname);
-                        listCategory.add(cat1);
+                        symptom symp1 = new symptom();
+                        symp1.setSymp_id(symptomid);
+                        symp1.setSymp_name(symptomname);
+                        listSymptom.add(symp1);
                     }
 
                 }
-                categoryAdapter catAdapter = new categoryAdapter(categorylist.this,listCategory);
-                catAdapter.setproductsbycategory(categorylist.this);
-                rvcategory.setAdapter(catAdapter);
+                symptomAdapter symAdapter = new symptomAdapter(symptomlist.this,listSymptom);
+                symAdapter.setproductsbysymptom(symptomlist.this);
+                rvsymptom.setAdapter(symAdapter);
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -93,11 +96,8 @@ public class categorylist extends AppCompatActivity implements productsbycategor
     }
 
     @Override
-    public void setoncategoryclicked(ArrayList<category> listCategory, int i) {
-        Intent intent= new Intent(categorylist.this,productlist.class);
-        category Category = listCategory.get(i);
-        String id=Category.getCateg_id();
-        intent.putExtra(JsonField.CATEGORY_ID,id);
+    public void setonsymptomclicked(ArrayList<symptom> listSymptom, int i) {
+        Intent intent= new Intent(symptomlist.this,productlist.class);
 
         startActivity(intent);
     }

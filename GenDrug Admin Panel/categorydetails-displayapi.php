@@ -3,9 +3,7 @@ $con =mysqli_connect("localhost","root","","gendrug");
 
 $response = array(); 
 
-
 $query = mysqli_query($con, "SELECT * FROM categorydetails ") or die(mysqli_error($con));
-
 $count = mysqli_num_rows($query);
 
 

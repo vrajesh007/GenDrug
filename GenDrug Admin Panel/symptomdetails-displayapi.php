@@ -18,7 +18,7 @@ if ($count > 0) {
          $fetch_data[]= $data;
     }
    
-    $response['Symptom Details'] = $fetch_data;
+    $response['Symptom'] = $fetch_data;
     $response['flag'] = 1;
    
 
