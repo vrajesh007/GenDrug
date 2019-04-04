@@ -56,5 +56,9 @@ public class JsonField {
     public static final String SYMPTOM_ID = "Symp_id";
     public static final String SYMPTOM_NAME = "Symp_name";
 
+    public static final String FEEDBACK="Feedback";
+    public static final String FEEDBACK_DATE="Feedback_date";
+    public static final String FEEDBACK_EMAIL="Feedback_email";
+
 
 }

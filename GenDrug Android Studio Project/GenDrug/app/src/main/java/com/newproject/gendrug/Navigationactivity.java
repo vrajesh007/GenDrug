@@ -113,6 +113,9 @@ public class Navigationactivity extends AppCompatActivity
 
 
         }else if (id == R.id.nav_feedback) {
+            Intent intent = new Intent(Navigationactivity.this, feedback.class);
+            startActivity(intent);
+
 
         }else if (id == R.id.nav_about) {
             Intent intent= new Intent(Navigationactivity.this,aboutus.class);

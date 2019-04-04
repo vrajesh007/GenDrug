@@ -98,7 +98,9 @@ public class symptomlist extends AppCompatActivity implements productsbysymptom 
     @Override
     public void setonsymptomclicked(ArrayList<symptom> listSymptom, int i) {
         Intent intent= new Intent(symptomlist.this,productlist.class);
-
+        symptom Symptom = listSymptom.get(i);
+        String symid= Symptom.getSymp_id();
+        intent.putExtra(JsonField.SYMPTOM_ID,symid);
         startActivity(intent);
     }
 }

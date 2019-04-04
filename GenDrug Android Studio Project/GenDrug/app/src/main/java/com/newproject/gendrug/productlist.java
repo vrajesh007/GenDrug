@@ -32,6 +32,7 @@ public class productlist extends AppCompatActivity implements ProductDetailClick
     ArrayList<product> products;
     RecyclerView rvproduct;
     private String id;
+    private String symid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,11 +44,41 @@ public class productlist extends AppCompatActivity implements ProductDetailClick
         Intent intent=getIntent();
         id=intent.getStringExtra(JsonField.CATEGORY_ID);
 
+
+        symid=intent.getStringExtra(JsonField.SYMPTOM_ID);
+
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(productlist.this);
         rvproduct.setLayoutManager(linearLayoutManager);
         
        // getCategid(id);
         getproduct(id);
+        getproductbysymp(symid);
+    }
+
+    private void getproductbysymp(final String symid) {
+        products = new ArrayList<>();
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, WebURL.PRODUCT_URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                parseJson(response.toString());
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+
+            }
+        }) {
+
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> map = new HashMap<>();
+                map.put(JsonField.SYMPTOM_ID, symid);
+                return map;
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(productlist.this);
+        requestQueue.add(stringRequest);
     }
 
 //    private void getCategid(final String id) {

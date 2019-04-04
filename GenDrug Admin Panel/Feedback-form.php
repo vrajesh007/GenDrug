@@ -13,8 +13,8 @@ if($_POST)
     {
 $a=$_POST['feedback'];
 $b=$_POST['feedbackdate'];
-$c=$_POST['feedbackstatus'];
-$insert=mysqli_query($con,"INSERT INTO feedback(Feedback_id,Feedback,Feedback_date,Feedback_status) VALUES ('','{$a}','{$b}','{$c}')") or die("Error" .mysqli_error($con));
+$c=$_POST['feedbackemail'];
+$insert=mysqli_query($con,"INSERT INTO feedback(Feedback_id,Feedback,Feedback_date,Feedback_email) VALUES ('','{$a}','{$b}','{$c}')") or die("Error" .mysqli_error($con));
 if($insert)
 {
 	echo "<script> alert('Record inserted'); </script>";
@@ -76,8 +76,8 @@ include 'header.php';
 										</div>
                                                                             
                                                                                 <div class="form-group">
-											<label for="eventInput3">Feedback Status</label>
-                                                                                        <input type="text" id="eventInput3" class="form-control required" name="feedbackstatus" >
+											<label for="eventInput3">Feedback Email</label>
+                                                                                        <input type="text" id="eventInput3" class="form-control required" name="feedbackemail" >
 										</div>
                                                                                 
 

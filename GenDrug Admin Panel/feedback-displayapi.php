@@ -15,7 +15,7 @@ if ($count > 0) {
          $data["Feedback_id"] = $row["Feedback_id"];
          $data["Feedback"] = $row["Feedback"];
          $data["Feedback_date"] = $row["Feedback_date"];
-         $data["Feedback_status"] = $row["Feedback_status"];
+         $data["Feedback_email"] = $row["Feedback_email"];
 
          $fetch_data[]= $data;
     }

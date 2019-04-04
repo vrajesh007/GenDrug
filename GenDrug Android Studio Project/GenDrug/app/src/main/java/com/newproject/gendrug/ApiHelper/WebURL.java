@@ -14,5 +14,6 @@ public class WebURL {
     public static final String UPLOAD_PRESCRIPTION_URL = KEY_MAIN_URL + "uploadprescription-api.php";
     public static final String ORDER_URL=  KEY_MAIN_URL +"orderdetails-displayapi.php";
     public static final String SYMPTOM_URL = KEY_MAIN_URL + "symptomdetails-displayapi.php";
+    public static final String KEY_FEEDBACK_URL = KEY_MAIN_URL + "feedback-api.php";
 
 }

@@ -11,8 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".symptomlist"
-            android:parentActivityName=".Navigationactivity"></activity>
+        <activity android:name=".feedback"></activity>
+        <activity
+            android:name=".symptomlist"
+            android:parentActivityName=".Navigationactivity" />
         <activity
             android:name=".youraccount"
             android:parentActivityName=".Navigationactivity" />

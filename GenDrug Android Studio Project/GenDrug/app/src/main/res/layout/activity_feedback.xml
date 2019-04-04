@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".feedback"
+    android:orientation="vertical"
+    android:background="@drawable/lightmedicaltheme">
+
+    <EditText
+        android:id="@+id/etfeedback"
+        android:layout_width="300dp"
+        android:layout_height="120dp"
+        android:hint="Feedback"
+        android:layout_gravity="center"
+        android:textColorHint="#000000" />
+
+    <EditText
+        android:id="@+id/etfeedbackdate"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:hint="Date"
+        android:layout_gravity="center"
+        android:textColorHint="#000000"
+        android:inputType="date"/>
+
+    <EditText
+        android:id="@+id/etfeedbackemail"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:hint="Email"
+        android:layout_gravity="center"
+        android:textColorHint="#000000"
+        android:inputType="textEmailAddress"/>
+
+    <Button
+        android:id="@+id/bfeedbacksubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="#FF0000"
+        android:text="Submit"
+        android:textColor="#ffffff"/>
+
+
+
+</LinearLayout>

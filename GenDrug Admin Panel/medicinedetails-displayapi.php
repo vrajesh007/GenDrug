@@ -9,6 +9,12 @@ if(isset($_POST['Categ_id'])) {
     
     $query = mysqli_query($con, "SELECT * FROM medicinedetails where Categ_id='{$categid}'") or die(mysqli_error($con));   
 }
+else if(isset($_POST['Symp_id'])) {
+    
+    $sympid= mysqli_real_escape_string($con,$_POST['Symp_id']);
+    
+    $query = mysqli_query($con, "SELECT * FROM medicinedetails where Symp_id='{$sympid}'") or die(mysqli_error($con));   
+}
 else {
 
 $query = mysqli_query($con, "SELECT * FROM medicinedetails ") or die(mysqli_error($con));
@@ -27,7 +33,7 @@ if ($count > 0) {
          $data["P_stock"] = $row["P_stock"];
          $data["P_photo"] = $row["P_photo"];
          $data["Categ_id"] = $row["Categ_id"];
-
+         $data["Symp_id"] = $row["Symp_id"];
          $fetch_data[]= $data;
     }
    

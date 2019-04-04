@@ -16,7 +16,7 @@ $e=mysqli_real_escape_string($con,$_POST['Password']);
 $f=mysqli_real_escape_string($con,$_POST['Dateofbirth']);
 $g=mysqli_real_escape_string($con,$_POST['Address']);
 
-    $insertquery = mysqli_query($con, "insert into userregistration (`U_name`,`Gender`,`Phonenum`,`Email`,`Password`,`DOB`,`Address`) values ('{$a}','{$b}','{$c}','{$d}','{$e}','{$f}','{$g}')") or die(mysqli_error($con));
+    $insertquery = mysqli_query($con, "insert into userregistration (`U_id`,`U_name`,`Gender`,`Phonenum`,`Email`,`Password`,`DOB`,`Address`) values ('','{$a}','{$b}','{$c}','{$d}','{$e}','{$f}','{$g}')") or die(mysqli_error($con));
     $lastinsertid = mysqli_insert_id($con);
 
     if ($insertquery) {
