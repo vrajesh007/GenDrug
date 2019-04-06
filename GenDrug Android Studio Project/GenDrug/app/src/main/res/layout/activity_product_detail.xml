@@ -11,8 +11,8 @@
     android:orientation="vertical">
     <ImageView
         android:id="@+id/ivmedimage"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:src="@drawable/logo"
         android:layout_gravity="center"/>
 
@@ -116,7 +116,7 @@
                 android:id="@+id/tvproductprice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Rs. "
+                android:text="Hello"
                 android:layout_marginLeft="55dp"
                 android:textColor="#000000"
                 android:textSize="25dp"

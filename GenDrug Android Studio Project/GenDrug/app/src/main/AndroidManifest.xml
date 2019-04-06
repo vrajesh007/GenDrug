@@ -14,30 +14,37 @@
         <activity android:name=".feedback"></activity>
         <activity
             android:name=".symptomlist"
-            android:parentActivityName=".Navigationactivity" />
+           />
         <activity
             android:name=".youraccount"
-            android:parentActivityName=".Navigationactivity" />
+           />
         <activity
             android:name=".productDetailActivity"
-            android:parentActivityName=".productlist" />
+           />
         <activity
             android:name=".orderdetails"
-            android:parentActivityName=".youraccount" />
+           />
         <activity
             android:name=".uploadprescription"
-            android:parentActivityName=".Navigationactivity" />
+          />
         <activity
             android:name=".prescription"
-            android:parentActivityName=".Navigationactivity" />
+           />
         <activity
-            android:name=".productlist"
-            android:parentActivityName=".Navigationactivity" />
+            android:name=".productlist" />
         <activity android:name=".changepassword" />
         <activity
             android:name=".Navigationactivity"
             android:label="GenDrug"
             android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity
+            android:name=".categorylist"
+          />
+        <activity
+            android:name=".splash"
+            android:theme="@style/NoTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -45,23 +52,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".categorylist"
-            android:parentActivityName=".Navigationactivity" />
-        <activity
-            android:name=".splash"
-            android:theme="@style/NoTheme" />
-        <activity
             android:name=".aboutus"
             android:label="About Us"
-            android:parentActivityName=".Navigationactivity" />
+           />
         <activity
             android:name=".forgotpassword"
             android:label="Forgot Password"
-            android:parentActivityName=".login" />
+           />
         <activity
             android:name=".signup"
             android:label="SignUp"
-            android:parentActivityName=".login" />
+          />
         <activity
             android:name=".login"
             android:theme="@style/NoTheme" />

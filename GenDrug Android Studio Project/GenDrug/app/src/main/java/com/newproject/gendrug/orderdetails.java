@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.MenuItem;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -39,6 +40,19 @@ public class orderdetails extends AppCompatActivity {
         rvorder.setLayoutManager(linearLayoutManager);
 
         getorderdetails();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId())
+        {
+            case android.R.id.home:
+                onBackPressed();
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     private void getorderdetails() {
@@ -80,7 +94,7 @@ public class orderdetails extends AppCompatActivity {
                         order1.setOrder_id(orderid);
                         order1.setOrder_products(orderproducts);
                         order1.setOrder_quantity(orderquantity);
-                        order1.setOrder_amount(orderamount);
+                        order1.setOrder_amount("Rs. "+ orderamount);
                         order1.setOrder_date(orderdate);
                         orders.add(order1);
                     }

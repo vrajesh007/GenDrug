@@ -3,7 +3,11 @@ $con =mysqli_connect("localhost","root","","gendrug");
 
 $response = array(); 
 
-if(isset($_POST['Categ_id'])) {
+
+if(isset($_POST['P_id'])){
+$query = mysqli_query($con, "SELECT * FROM `medicinedetails` WHERE P_id = '{$_POST['P_id']}'") or die(mysqli_error($con));
+}
+else if(isset($_POST['Categ_id'])) {
     
     $categid= mysqli_real_escape_string($con,$_POST['Categ_id']);
     

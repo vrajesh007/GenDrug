@@ -3,6 +3,7 @@ package com.newproject.gendrug;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -65,8 +66,22 @@ public class productDetailActivity extends AppCompatActivity {
         RequestQueue requestQueue= Volley.newRequestQueue(productDetailActivity.this);
         requestQueue.add(stringRequest);
 
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId())
+        {
+            case android.R.id.home:
+                onBackPressed();
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
 
     private void parseResponse(String s) {
         try {
@@ -89,7 +104,7 @@ public class productDetailActivity extends AppCompatActivity {
                         tvproductdetails.setText(productdetails);
                         tvproductcategory.setText(productcategory);
                         tvproductprice.setText("Rs "+ productprice);
-                        tvproductstock.setText(productstock);
+                        tvproductstock.setText(productstock + " left in stock!");
                         Glide.with(productDetailActivity.this).load(WebURL.PRODUCT_IMAGE_URL+productphoto).into(ivmedimage);
 
                     }

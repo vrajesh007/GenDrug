@@ -8,7 +8,15 @@
     android:orientation="vertical"
     android:background="@drawable/lightmedicaltheme">
 
+    <ImageView
+        android:id="@+id/ivmedimage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/logo"
+        android:layout_gravity="center"/>
+
     <EditText
+        android:layout_marginTop="20dp"
         android:id="@+id/etfeedback"
         android:layout_width="300dp"
         android:layout_height="120dp"

@@ -1,8 +1,10 @@
 package com.newproject.gendrug;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,7 +27,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class changepassword extends AppCompatActivity implements View.OnClickListener {
-    EditText etEmail,etOpass,etNpass,etCpass;
+    EditText etOpass,etNpass,etCpass;
     Button submit;
     private  UserSessionManager userSessionManager;
 
@@ -34,14 +36,25 @@ public class changepassword extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_changepassword);
 
-        etEmail=findViewById(R.id.etEmail);
         etOpass= findViewById(R.id.etOpass);
         etNpass= findViewById(R.id.etNpass);
         etCpass= findViewById(R.id.etCpass);
         submit=findViewById(R.id.submit);
         userSessionManager= new UserSessionManager(changepassword.this);
         submit.setOnClickListener(this);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId())
+        {
+            case android.R.id.home:
+                onBackPressed();
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -67,7 +80,6 @@ public class changepassword extends AppCompatActivity implements View.OnClickLis
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String>params= new HashMap<>();
                 params.put(JsonField.KEY_USER_ID,userSessionManager.getUserID());
-                params.put(JsonField.KEY_USER_EMAIL,etEmail.getText().toString());
                 params.put(JsonField.KEY_OLD_PASSWORD,etOpass.getText().toString());
                 params.put(JsonField.KEY_NEW_PASSWORD,etNpass.getText().toString());
                 params.put(JsonField.KEY_CONFIRM_PASSWORD,etCpass.getText().toString());
@@ -88,6 +100,9 @@ public class changepassword extends AppCompatActivity implements View.OnClickLis
             String message = jsonObject.optString(JsonField.MESSAGE);
             if(flag==1) {
                 Toast.makeText(this,"Password Changed Successfully",Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(changepassword.this, Navigationactivity.class);
+                startActivity(intent);
+
 
             }
             else{

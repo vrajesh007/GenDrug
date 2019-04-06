@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 04, 2019 at 02:06 PM
+-- Generation Time: Apr 06, 2019 at 03:57 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -315,8 +315,8 @@ CREATE TABLE `userregistration` (
 --
 
 INSERT INTO `userregistration` (`U_id`, `U_name`, `Gender`, `DOB`, `Phonenum`, `Email`, `Password`, `Conpassword`, `Address`) VALUES
-(1, 'Vrajesh Trivedi', 'Male', '1997-08-25', '9409288425', 'trivedi.vrajesh007@gmail.com', '9409288425', '9409288425', '15, Government servant society, Opposite Municipal Market, C.G road.'),
-(2, 'Atul Jose', 'male', '29/01/1998', '9537914451', 'atuljose123@gmail.com', '2329', '123456789', 'Sabarmati'),
+(1, 'Vrajesh Trivedi', 'Male', '1997-08-25', '9409288425', 'trivedi.vrajesh007@gmail.com', '321', '9409288425', '15, Government servant society, Opposite Municipal Market, C.G road.'),
+(2, 'Atul Jose', 'male', '29/01/1998', '9537914451', 'atuljose123@gmail.com', '12345', '123456789', 'Sabarmati'),
 (3, 'Monish', 'Male', '12/02/1998', '9111112354', 'monishboy@gmail.com', 'goku@1234', '', 'Motera');
 
 --

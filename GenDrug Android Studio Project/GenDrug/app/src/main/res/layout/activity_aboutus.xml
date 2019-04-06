@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,20 +10,30 @@
     tools:context=".aboutus"
     android:background="@drawable/lightmedicaltheme"
     android:orientation="vertical">
+        <ImageView
+            android:id="@+id/ivmedimage"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/logo"
+            android:layout_gravity="center"/>
 
     <TextView
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="What is Generic Medicine?"
         android:textColor="#FF00FF"
         android:textSize="24sp"
-        android:textStyle="bold|italic" />
+        android:textStyle="bold|italic"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
 
 
     <TextView
-        android:layout_width="385sp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="A generic drug is a pharmaceutical drug that has the same chemical substance as the drug that was originally developed, patented and innovated."
@@ -28,22 +41,28 @@
         android:textSize="19sp" />
 
     <TextView
-        android:layout_width="385sp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="The generic drug has the same active pharmaceutical ingredient (API) as the original, but it may differ in characteristics such as manufacturing process, formulation, excipients, color, taste, and packaging. "
         android:textColor="#000000"
-        android:textSize="19sp" />
+        android:textSize="19sp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
 
     <TextView
-        android:layout_width="385sp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Cost is the main difference between generic and brand name prescription drugs."
         android:textColor="#000000"
-        android:textSize="19sp" />
+        android:textSize="19sp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
 
     <TextView
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -54,7 +73,9 @@
         android:textStyle="bold|italic" />
 
     <TextView
-        android:layout_width="385sp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="GenDrug is an initiative that we took to provide Generic medicines in an easy way. "
@@ -62,3 +83,4 @@
         android:textSize="19sp" />
 
 </LinearLayout>
+</ScrollView>

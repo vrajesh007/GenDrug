@@ -5,9 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".uploadprescription"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/lightmedicaltheme">
+    <ImageView
+        android:id="@+id/ivmedimage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/logo"
+        android:layout_gravity="center"/>
 
     <EditText
+        android:layout_marginTop="35dp"
         android:id="@+id/etenterpres"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,10 +34,13 @@
         android:layout_height="wrap_content"
         android:hint="Enter Email"/>
     <Button
+        android:layout_marginTop="25dp"
         android:id="@+id/buploadsubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Submit"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:background="#ff0000"
+        android:textColor="#ffffff"/>
 
 </LinearLayout>

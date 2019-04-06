@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.LinearLayout;
 
 import com.android.volley.Request;
@@ -44,7 +45,19 @@ public class symptomlist extends AppCompatActivity implements productsbysymptom 
         rvsymptom.setLayoutManager(linearLayout);
 
         getsymptom();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId())
+        {
+            case android.R.id.home:
+                onBackPressed();
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
 
     }
 

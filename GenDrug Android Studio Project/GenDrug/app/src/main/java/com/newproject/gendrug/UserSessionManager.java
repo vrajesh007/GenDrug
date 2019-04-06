@@ -58,4 +58,6 @@ public class UserSessionManager {
         mEditor.remove(IS_LOGIN);
         mEditor.commit();
     }
+
 }
+
