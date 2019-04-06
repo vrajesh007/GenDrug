@@ -17,19 +17,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scaleType="fitXY"
-            android:src="@drawable/s12"/>
+            android:src="@drawable/slider1"/>
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scaleType="fitXY"
-            android:src="@drawable/s123"/>
+            android:src="@drawable/slider2"/>
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scaleType="fitXY"
-            android:src="@drawable/s1234"/>
+            android:src="@drawable/slider3"/>
 
     </ViewFlipper>
 
