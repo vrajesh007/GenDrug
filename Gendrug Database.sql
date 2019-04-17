@@ -1,11 +1,11 @@
--- phpMyAdmin SQL Dump
--- version 4.8.3
+﻿-- phpMyAdmin SQL Dump
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 06, 2019 at 03:57 PM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.2.11
+-- Generation Time: Apr 17, 2019 at 10:33 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.1.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -295,6 +295,136 @@ INSERT INTO `symptomdetails` (`Symp_id`, `Symp_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_cart`
+--
+
+CREATE TABLE `tbl_cart` (
+  `cart_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `product_name` varchar(255) NOT NULL,
+  `prodcut_description` text NOT NULL,
+  `product_image` text NOT NULL,
+  `product_amount` decimal(10,2) NOT NULL,
+  `product_unit_price` decimal(10,2) NOT NULL,
+  `product_qty` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_order_details`
+--
+
+CREATE TABLE `tbl_order_details` (
+  `order_details_id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `P_id` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `price` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_order_details`
+--
+
+INSERT INTO `tbl_order_details` (`order_details_id`, `order_id`, `P_id`, `quantity`, `price`) VALUES
+(1, 1, 5, 5, 500),
+(2, 2, 5, 5, 500),
+(3, 2, 6, 2, 500),
+(4, 3, 5, 2, 500),
+(5, 3, 6, 3, 500),
+(6, 4, 5, 2, 500),
+(7, 5, 5, 2, 500),
+(8, 6, 1, 2, 1000),
+(9, 7, 5, 5, 500),
+(10, 7, 6, 2, 500),
+(11, 8, 5, 2, 500),
+(12, 8, 6, 3, 500),
+(13, 9, 5, 1, 500),
+(14, 9, 6, 5, 500),
+(15, 10, 5, 2, 500),
+(16, 10, 6, 1, 500),
+(17, 11, 1, 5, 1000),
+(18, 12, 5, 5, 500),
+(19, 14, 16, 8, 6),
+(20, 15, 22, 5, 88),
+(21, 15, 9, 10, 66),
+(22, 16, 2, 20, 45);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_order_master`
+--
+
+CREATE TABLE `tbl_order_master` (
+  `order_id` int(11) NOT NULL,
+  `order_date` date NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `total_amount` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_order_master`
+--
+
+INSERT INTO `tbl_order_master` (`order_id`, `order_date`, `user_id`, `total_amount`) VALUES
+(1, '2019-02-26', 1, '2500'),
+(2, '2019-02-26', 1, '3500'),
+(3, '2019-02-26', 1, '2500'),
+(4, '2019-02-26', 1, '1000'),
+(5, '2019-02-26', 1, '1000'),
+(6, '2019-02-26', 1, '2000'),
+(7, '2019-02-27', 1, '3500'),
+(8, '2019-02-28', 1, '2500.00'),
+(9, '0000-00-00', 1, '3000.00'),
+(10, '2019-03-01', 1, '1500.00'),
+(11, '2019-04-09', 1, '5000'),
+(12, '2019-04-09', 1, '2500.00'),
+(13, '2019-04-17', 3, '48.00'),
+(14, '2019-04-17', 3, '48.00'),
+(15, '2019-04-17', 3, '1100.00'),
+(16, '2019-04-17', 3, '900.00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_shipping`
+--
+
+CREATE TABLE `tbl_shipping` (
+  `shipping_id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `shipping_name` varchar(100) NOT NULL,
+  `shipping_mobile` varchar(100) NOT NULL,
+  `shipping_address` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_shipping`
+--
+
+INSERT INTO `tbl_shipping` (`shipping_id`, `order_id`, `shipping_name`, `shipping_mobile`, `shipping_address`) VALUES
+(0, 1, 'Jay', '9586248516', 'K/6,Akash Technolabs, Navrangpura, Ahmedabad,380009'),
+(0, 2, 'Akash', '8128700751', 'K/6,Akash Technolabs, Navrangpura, Ahmedabad,380009'),
+(0, 3, 'Paras', '9978621654', 'K/6,Akash Technolabs, Navrangpura, Ahmedabad,380009'),
+(0, 4, 'Neha', '8466467946', 'K/6,Akash Technolabs, Navrangpura, Ahmedabad,380009'),
+(0, 5, 'Chetas', '9464916464', 'K/6,Akash Technolabs, Navrangpura, Ahmedabad,380009'),
+(0, 6, 'a', '7876912121', 'ajaj'),
+(0, 7, 'Darshan', '9897965588', 'testing address'),
+(0, 8, 'Test', '9646494679', 'test address'),
+(0, 9, 'Test', '9737649434', 'test address'),
+(0, 10, 'test', '9467946767', 'test address'),
+(0, 11, 'Test', '9898989898', 'test'),
+(0, 12, 'test', '8998989898', 'test'),
+(0, 14, 'Android App Order', '9587856954', 'testAddress'),
+(0, 15, 'Test', '9632589548', 'tes5t'),
+(0, 16, 'testing', '9632586948', 'test1');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `userregistration`
 --
 
@@ -402,6 +532,24 @@ ALTER TABLE `symptomdetails`
   ADD PRIMARY KEY (`Symp_id`);
 
 --
+-- Indexes for table `tbl_cart`
+--
+ALTER TABLE `tbl_cart`
+  ADD PRIMARY KEY (`cart_id`);
+
+--
+-- Indexes for table `tbl_order_details`
+--
+ALTER TABLE `tbl_order_details`
+  ADD PRIMARY KEY (`order_details_id`);
+
+--
+-- Indexes for table `tbl_order_master`
+--
+ALTER TABLE `tbl_order_master`
+  ADD PRIMARY KEY (`order_id`);
+
+--
 -- Indexes for table `userregistration`
 --
 ALTER TABLE `userregistration`
@@ -488,6 +636,24 @@ ALTER TABLE `supplierdetails`
 --
 ALTER TABLE `symptomdetails`
   MODIFY `Symp_id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `tbl_cart`
+--
+ALTER TABLE `tbl_cart`
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `tbl_order_details`
+--
+ALTER TABLE `tbl_order_details`
+  MODIFY `order_details_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `tbl_order_master`
+--
+ALTER TABLE `tbl_order_master`
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `userregistration`

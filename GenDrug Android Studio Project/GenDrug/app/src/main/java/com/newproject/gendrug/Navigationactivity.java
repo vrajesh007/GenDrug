@@ -67,9 +67,7 @@ public class Navigationactivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         if (userSessionManager.getLoginStatus()) {
-
             Toast.makeText(this, "Welcome to GenDrug!", Toast.LENGTH_SHORT).show();
-
         } else {
             Intent intent = new Intent(Navigationactivity.this, login.class);
             startActivity(intent);
@@ -220,8 +218,8 @@ public class Navigationactivity extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_cart) {
-
-
+            Intent intent = new Intent(Navigationactivity.this, CartActivity.class);
+            startActivity(intent);
         }else if (id == R.id.nav_account) {
             Intent intent = new Intent(Navigationactivity.this, youraccount.class);
             startActivity(intent);

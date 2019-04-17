@@ -61,4 +61,42 @@ public class JsonField {
     public static final String FEEDBACK_EMAIL="Feedback_email";
 
 
+
+    public static final String USER_ID="user_id";
+
+
+    public static final String CART_PRODUCT_ARRAY = "cart_product_details";
+    public static final String CART_ARRAY = "cart";
+    public static final String CART_ID = "cart_id";
+    public static final String CART_PRODUCT_ID= "product_id";
+    public static final String CART_PRODUCT_NAME= "product_name";
+    public static final String CART_PRODUCT_DESCREPTION= "prodcut_description";
+    public static final String CART_PRODUCT_IMAGE= "product_image";
+    public static final String CART_PRODUCT_AMOUNT= "product_amount";
+    public static final String CART_PRODUCT_UNIT_PRICE= "product_unit_price";
+    public static final String CART_PRODUCT_QTY= "product_qty";
+
+    public static final String DETAILS_ARRAY = "details";
+    public static final String TOTAL_AMOUNT = "total_amount";
+
+    public static final String PRICE = "price";
+    public static final String QTY = "quantity";
+
+    public static final String ORDER_DETAILS = "order_details";
+
+    public static final String SHPPPING_NAME = "shipping_name";
+    public static final String SHIPPING_MOBILE = "shipping_mobile";
+    public static final String SHIPPING_ADDRESS = "shipping_address";
+
+    public static final String MY_ORDER_ID = "order_id";
+    public static final String MY_ORDER_DATE = "order_date";
+
+    public static final String ORDER_DETAILS_ARRAY = "product";
+
+
+
+
+
+
+
 }

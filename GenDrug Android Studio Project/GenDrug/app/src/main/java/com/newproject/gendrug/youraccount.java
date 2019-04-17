@@ -16,13 +16,17 @@ public class youraccount extends AppCompatActivity {
         setContentView(R.layout.activity_youraccount);
 
 
-        byourorders=(Button)findViewById(R.id.byourorders);
+        byourorders = (Button) findViewById(R.id.byourorders);
 
         byourorders.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(youraccount.this,orderdetails.class);
+                /*Intent intent = new Intent(youraccount.this,orderdetails.class);
+                startActivity(intent);*/
+
+                Intent intent = new Intent(youraccount.this, OrderActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -30,8 +34,7 @@ public class youraccount extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId())
-        {
+        switch (item.getItemId()) {
             case android.R.id.home:
                 onBackPressed();
                 break;
@@ -39,4 +42,4 @@ public class youraccount extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-    }
+}
