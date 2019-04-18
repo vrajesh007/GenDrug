@@ -29,7 +29,7 @@ include 'sidebar.php' ;
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Welcome to the Batcave.</h4>
+                    <h4 class="card-title">Welcome to GenDrug.</h4>
                     <a href="changepassword.php" class="btn btn-raised btn-info" style="float:left">Change Password</a>  
                      <a href="logout.php" class="btn btn-raised btn-info" style="float:right">Logout</a>                    
                 </div>
