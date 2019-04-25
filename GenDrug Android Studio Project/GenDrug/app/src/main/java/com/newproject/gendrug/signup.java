@@ -79,10 +79,20 @@ public class signup extends AppCompatActivity implements View.OnClickListener {
                 if (checkUserName() && checkGender() && checkMobileNumber() && checkEmail() && checkPassword() && checkcPassword())
                 {
                     selectedGender = female.isChecked()?"Female":"Male";
-                    sendSignupRequest();
-                    Toast.makeText(signup.this, "Registration done successfully", Toast.LENGTH_SHORT).show();
-                    Intent  intent=new Intent(signup.this,login.class);
-                    startActivity(intent);
+                    if(password.getText().toString().equals(confirmpassword.getText().toString()))
+                    {
+                        sendSignupRequest();
+                        Toast.makeText(signup.this, "Registration done successfully", Toast.LENGTH_SHORT).show();
+                        Intent  intent=new Intent(signup.this,login.class);
+                        startActivity(intent);
+
+
+                    }
+                    else
+                    {
+                        Toast.makeText(this, "Password & confirm password does not match", Toast.LENGTH_SHORT).show();
+                    }
+
 
                 }
 

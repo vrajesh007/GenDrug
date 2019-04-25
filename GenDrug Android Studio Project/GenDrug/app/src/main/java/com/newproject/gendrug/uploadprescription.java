@@ -137,7 +137,7 @@ public class uploadprescription extends AppCompatActivity implements View.OnClic
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode== CAMERA_REQUEST && resultCode==RESULT_OK){
+        if (requestCode == CAMERA_REQUEST && resultCode == RESULT_OK){
             String photoURI = PreferenceManager.getDefaultSharedPreferences(this).getString("USER_PHOTO_FILE","");
 
             if(photoURI != null){
@@ -147,7 +147,7 @@ public class uploadprescription extends AppCompatActivity implements View.OnClic
             }else{
                 Toast.makeText(this,"Capture image uri not found", Toast.LENGTH_SHORT).show();
             }
-        }else if(requestCode==PICK_IMAGE_REQUEST&& resultCode== RESULT_OK){
+        }else if(requestCode==PICK_IMAGE_REQUEST && resultCode== RESULT_OK){
             if (data !=null){
                 Uri uri = data.getData();
                 String[] projection ={MediaStore.Images.Media.DATA};
@@ -174,11 +174,12 @@ public class uploadprescription extends AppCompatActivity implements View.OnClic
             DateFormat df = new SimpleDateFormat("hh-mm-ss");
             File storageDirectory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
 
-            String strPath = storageDirectory.getPath()+"/"+"ImageUploalDemo";
+            String strPath = storageDirectory.getPath() + "/" + "Gendrug";
 
             storageDirectory=new File(strPath);
             storageDirectory.mkdirs();
-            strPath=storageDirectory.getPath()+"/"+"Report_"+df.format(date)+".jpg";
+            strPath=storageDirectory.getPath() + "/" + "Report_" + df.format(date) + ".jpg";
+            storageDirectory=new File(strPath);
             mCameraFileName=storageDirectory.getPath();
 
             PreferenceManager.getDefaultSharedPreferences(this).edit().putString("USER_PHOTO_FILE", mCameraFileName).apply();

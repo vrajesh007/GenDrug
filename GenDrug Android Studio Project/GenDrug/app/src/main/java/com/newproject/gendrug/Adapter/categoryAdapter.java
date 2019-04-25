@@ -36,6 +36,11 @@ public class categoryAdapter extends RecyclerView.Adapter<categoryAdapter.ViewHo
         this.listCategory = listCategory;
     }
 
+    public void filterList(ArrayList<category> filterdCategory) {
+        this.listCategory = filterdCategory;
+        notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {

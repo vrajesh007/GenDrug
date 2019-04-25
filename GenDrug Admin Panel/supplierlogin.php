@@ -5,15 +5,15 @@ if($_POST)
     {
         $uname=$_POST['username'];
         $pass=$_POST['password'];
-        $selectquery = mysqli_query($con, "SELECT * from admin where Admin_uname= '{$uname}' and Admin_pass='{$pass}'") or die(mysqli_errno($con));
+        $selectquery = mysqli_query($con, "SELECT * from supplierregistration where Supplier_uname= '{$uname}' and Supplier_pass='{$pass}'") or die(mysqli_errno($con));
         $count= mysqli_num_rows($selectquery);
         $row= mysqli_fetch_array($selectquery);
         
         if($count>0)
         {
-          $_SESSION['session_id']=$row['Admin_id'];
-          $_SESSION['session_name']=$row['Admin_uname'];
-          header("location:dashboard.php");
+          $_SESSION['session_id']=$row['Supplier_id'];
+          $_SESSION['session_name']=$row['Supplier_uname'];
+          header("location:supplierdashboard.php");
             
         } 
        else
@@ -62,14 +62,7 @@ if($_POST)
                             <input class="form-control" type="password" name="password" placeholder="Password" required>
                             <div class="form-button">
                                 <button id="submit" type="submit" class="ibtn">Login</button> <a href="Forgotpassword.php">Forgot password?</a>
-                            </div>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                           
-                            <a href="supplierlogin.php"><button id="suplogin" type="button" class="btn btn-raised btn-warning mr-1" name="suplogin">Supplier Login
-                            </button></a>  
+                            </div>  
                         </form>
                         
                     </div>
@@ -85,5 +78,6 @@ if($_POST)
 
 
 </html>
+
 
 

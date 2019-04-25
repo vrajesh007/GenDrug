@@ -41,6 +41,12 @@ public class productadapter extends RecyclerView.Adapter<productadapter.ViewHold
         Log.d("size",String.valueOf(products.size()));
     }
 
+    public void filterList(ArrayList<product> filterdCategory) {
+        this.products = filterdCategory;
+        notifyDataSetChanged();
+    }
+
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {

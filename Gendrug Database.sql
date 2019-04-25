@@ -1,11 +1,11 @@
-﻿-- phpMyAdmin SQL Dump
--- version 4.8.5
+-- phpMyAdmin SQL Dump
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 17, 2019 at 10:33 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.1.27
+-- Generation Time: Apr 25, 2019 at 01:40 PM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 7.2.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -120,7 +120,7 @@ CREATE TABLE `feedback` (
 --
 
 INSERT INTO `feedback` (`Feedback_id`, `Feedback`, `Feedback_date`, `Feedback_email`) VALUES
-(1, 'wow', '04/04/2019', 'trivedi.vrajesh007@gmail.com');
+(1, 'wow!', '2019-04-19', 'trivedi.vrajesh007@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -145,7 +145,7 @@ CREATE TABLE `medicinedetails` (
 --
 
 INSERT INTO `medicinedetails` (`P_id`, `P_name`, `P_details`, `P_category`, `P_price`, `P_stock`, `P_photo`, `Categ_id`, `Symp_id`) VALUES
-(1, 'Humstard 3', '\r\nInsulin is a naturally occurring hormone made by the pancreas that helps our body use or store blood glucose (sugar) it gets from food. For people with diabetes, either the pancreas does not make enough insulin to meet the body\'s requirements, or the body cannot properly use the insulin that is made. As a result, glucose cannot be used or stored properly and accumulates in the bloodstream. Insulin injected under the skin helps to lower blood glucose levels.', 'Injection', 110, 40, 'upload/humstard.jpg', 1, 1),
+(1, 'Humstard 3', 'Insulin is a naturally occurring hormone made by the pancreas that helps our body use or store blood glucose (sugar) it gets from food. For people with diabetes, either the pancreas does not make enough insulin to meet the body\'s requirements, or the body cannot properly use the insulin that is made. As a result, glucose cannot be used or stored properly and accumulates in the bloodstream. Insulin injected under the skin helps to lower blood glucose levels.', 'Injection', 110, 50, 'upload/humstard.jpg', 1, 1),
 (2, 'AL TOTAL ', '1 AL Total Syrup is an antihistamine which works by blocking the action of histamine in the body. It is used for relieving symptoms of sinus pressure, sinus congestion, runny nose, itching of the throat and nose, watery eyes, and sneezing due to upper respiratory infections, hay fever and allergies.', 'Syrup', 45, 150, 'upload/1-Al-Total-syrup-1.png', 3, 6),
 (3, 'FERCEE TR ', 'Fercee Tr Capsule is used for Iron deficiency anaemia, Anaemia, Spina bifida in an unborn fetus, Treatment of anemias of nutritional origin, Pregnancy, Infancy, Or childhood, Iron deficiency anemia, Treatment of megaloblastic anemias due to a deficiency of folic acid, Diarrhea, Wilson\'s disease, Acne, Age related vision loss and other conditions. Fercee Tr Capsule may also be used for purposes not listed in this medication guide.', 'Tablets', 14, 50, 'upload/fercee-tr-capsules-500x500.jpg', 4, 0),
 (4, 'TUSQ DX CO', 'Tusq Dx Syrup is an antihistamine which works by blocking the action of histamine in the body. It is used for relieving symptoms of sinus pressure, sinus congestion, runny nose, itching of the throat and nose, watery eyes, and sneezing due to upper respiratory infections, hay fever and allergies.\r\n\r\n', 'Syrup', 70, 50, 'upload/tusq-dx-liq-100ml-250x250.jpg', 3, 6),
@@ -271,6 +271,26 @@ CREATE TABLE `supplierdetails` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `supplierregistration`
+--
+
+CREATE TABLE `supplierregistration` (
+  `Supplier_id` int(10) NOT NULL,
+  `Supplier_uname` varchar(20) NOT NULL,
+  `Supplier_pass` varchar(100) NOT NULL,
+  `Supplier_email` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `supplierregistration`
+--
+
+INSERT INTO `supplierregistration` (`Supplier_id`, `Supplier_uname`, `Supplier_pass`, `Supplier_email`) VALUES
+(1, 'vrajeshtrivedi', '9409288425', 'trivedi.vrajesh007@gmail.com');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `symptomdetails`
 --
 
@@ -310,6 +330,13 @@ CREATE TABLE `tbl_cart` (
   `product_qty` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `tbl_cart`
+--
+
+INSERT INTO `tbl_cart` (`cart_id`, `user_id`, `product_id`, `product_name`, `prodcut_description`, `product_image`, `product_amount`, `product_unit_price`, `product_qty`) VALUES
+(1, 1, 6, 'GEOFIT MEN', '\r\nGeofit Capsule is used for Leg pain due to blocked arteries, Chest pain, High blood pressure, Tissue repairing, Rapid weight loss, Heart attack, Biotin deficiency, Skin and hair growth, Weak nails, Healthy nervous system and bone marrow maintenance and other conditions. Geofit Capsule may also be used for purposes not listed in this medication guide', 'upload/050217-163306_Geofit-Men12.jpg', '3420.00', '45.00', 76);
+
 -- --------------------------------------------------------
 
 --
@@ -333,24 +360,7 @@ INSERT INTO `tbl_order_details` (`order_details_id`, `order_id`, `P_id`, `quanti
 (2, 2, 5, 5, 500),
 (3, 2, 6, 2, 500),
 (4, 3, 5, 2, 500),
-(5, 3, 6, 3, 500),
-(6, 4, 5, 2, 500),
-(7, 5, 5, 2, 500),
-(8, 6, 1, 2, 1000),
-(9, 7, 5, 5, 500),
-(10, 7, 6, 2, 500),
-(11, 8, 5, 2, 500),
-(12, 8, 6, 3, 500),
-(13, 9, 5, 1, 500),
-(14, 9, 6, 5, 500),
-(15, 10, 5, 2, 500),
-(16, 10, 6, 1, 500),
-(17, 11, 1, 5, 1000),
-(18, 12, 5, 5, 500),
-(19, 14, 16, 8, 6),
-(20, 15, 22, 5, 88),
-(21, 15, 9, 10, 66),
-(22, 16, 2, 20, 45);
+(5, 3, 6, 3, 500);
 
 -- --------------------------------------------------------
 
@@ -374,18 +384,7 @@ INSERT INTO `tbl_order_master` (`order_id`, `order_date`, `user_id`, `total_amou
 (2, '2019-02-26', 1, '3500'),
 (3, '2019-02-26', 1, '2500'),
 (4, '2019-02-26', 1, '1000'),
-(5, '2019-02-26', 1, '1000'),
-(6, '2019-02-26', 1, '2000'),
-(7, '2019-02-27', 1, '3500'),
-(8, '2019-02-28', 1, '2500.00'),
-(9, '0000-00-00', 1, '3000.00'),
-(10, '2019-03-01', 1, '1500.00'),
-(11, '2019-04-09', 1, '5000'),
-(12, '2019-04-09', 1, '2500.00'),
-(13, '2019-04-17', 3, '48.00'),
-(14, '2019-04-17', 3, '48.00'),
-(15, '2019-04-17', 3, '1100.00'),
-(16, '2019-04-17', 3, '900.00');
+(5, '2019-02-26', 1, '1000');
 
 -- --------------------------------------------------------
 
@@ -526,6 +525,12 @@ ALTER TABLE `supplierdetails`
   ADD PRIMARY KEY (`Supp_id`);
 
 --
+-- Indexes for table `supplierregistration`
+--
+ALTER TABLE `supplierregistration`
+  ADD PRIMARY KEY (`Supplier_id`);
+
+--
 -- Indexes for table `symptomdetails`
 --
 ALTER TABLE `symptomdetails`
@@ -632,6 +637,12 @@ ALTER TABLE `supplierdetails`
   MODIFY `Supp_id` int(6) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `supplierregistration`
+--
+ALTER TABLE `supplierregistration`
+  MODIFY `Supplier_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `symptomdetails`
 --
 ALTER TABLE `symptomdetails`
@@ -641,19 +652,19 @@ ALTER TABLE `symptomdetails`
 -- AUTO_INCREMENT for table `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_order_details`
 --
 ALTER TABLE `tbl_order_details`
-  MODIFY `order_details_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `order_details_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_order_master`
 --
 ALTER TABLE `tbl_order_master`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `userregistration`

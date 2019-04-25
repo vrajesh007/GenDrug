@@ -6,6 +6,8 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -16,6 +18,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
@@ -48,9 +51,11 @@ public class Navigationactivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, productsbycategory {
     UserSessionManager userSessionManager;
     ViewFlipper viewFlipper;
-
+EditText etSearch;
     RecyclerView rvcategory;
     ArrayList<category> listCategory;
+    category cat1;
+    categoryAdapter catAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +64,7 @@ public class Navigationactivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         userSessionManager=new UserSessionManager(Navigationactivity.this);
+etSearch=findViewById(R.id.etSearch);
 
         viewFlipper =(ViewFlipper)findViewById(R.id.vf1);
         viewFlipper.setFlipInterval(3000);
@@ -88,6 +94,46 @@ public class Navigationactivity extends AppCompatActivity
 
         getcategory();
 
+        
+        //Search Logic
+        etSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                //after the change calling the method and passing the search input
+                filterCategory(editable.toString());
+            }
+        });
+
+    }
+
+    private void filterCategory(String toString) {
+        //new array list that will hold the filtered data
+        ArrayList<category> filterdCategory = new ArrayList<>();
+        //looping through existing elements
+        for (category modelCategory : listCategory) {
+            //if the existing elements contains the search input
+            if (modelCategory.getCateg_name().toLowerCase().contains(toString.toLowerCase())) {
+                //adding the element to filtered list
+                filterdCategory.add(modelCategory);
+            }
+        }
+        //calling a method of the adapter class and passing the filtered list
+        catAdapter.filterList(filterdCategory);
+        if (filterdCategory.size() > 0) {
+            //Search Matched the item
+        } else {
+            //No Item in Search Query
+        }
 
     }
 
@@ -124,14 +170,14 @@ public class Navigationactivity extends AppCompatActivity
                         String categoryid  = objcategory.getString(JsonField.CATEGORY_ID);
                         String categoryname  = objcategory.getString(JsonField.CATEGORY_NAME);
 
-                        category cat1 = new category();
+                         cat1 = new category();
                         cat1.setCateg_id(categoryid);
                         cat1.setCateg_name(categoryname);
                         listCategory.add(cat1);
                     }
 
                 }
-                categoryAdapter catAdapter = new categoryAdapter(Navigationactivity.this,listCategory);
+                catAdapter = new categoryAdapter(Navigationactivity.this,listCategory);
                 catAdapter.setproductsbycategory(Navigationactivity.this);
                 rvcategory.setAdapter(catAdapter);
             }

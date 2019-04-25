@@ -5,8 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.EditText;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -24,6 +27,7 @@ import com.newproject.gendrug.Adapter.productadapter;
 import com.newproject.gendrug.ApiHelper.JsonField;
 import com.newproject.gendrug.ApiHelper.WebURL;
 import com.newproject.gendrug.Listener.ProductDetailClickListener;
+import com.newproject.gendrug.Model.category;
 import com.newproject.gendrug.Model.product;
 
 import org.json.JSONArray;
@@ -39,6 +43,8 @@ public class productlist extends AppCompatActivity implements ProductDetailClick
     RecyclerView rvproduct;
     private String id;
     private String symid;
+    EditText etSearch;
+    productadapter proadapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +52,7 @@ public class productlist extends AppCompatActivity implements ProductDetailClick
         setContentView(R.layout.activity_productlist);
         
         rvproduct=(RecyclerView) findViewById(R.id.rvproduct);
-
+etSearch=findViewById(R.id.etSearch);
         Intent intent=getIntent();
         id=intent.getStringExtra(JsonField.CATEGORY_ID);
 
@@ -60,6 +66,48 @@ public class productlist extends AppCompatActivity implements ProductDetailClick
         getproduct(id);
         getproductbysymp(symid);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //Search Logic
+        etSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                //after the change calling the method and passing the search input
+                filterProduct(editable.toString());
+            }
+        });
+
+    }
+
+    private void filterProduct(String toString) {
+
+        //new array list that will hold the filtered data
+        ArrayList<product> filterdCategory = new ArrayList<>();
+        //looping through existing elements
+        for (product modelCategory : products) {
+            //if the existing elements contains the search input
+            if (modelCategory.getP_name().toLowerCase().contains(toString.toLowerCase())) {
+                //adding the element to filtered list
+                filterdCategory.add(modelCategory);
+            }
+        }
+        //calling a method of the adapter class and passing the filtered list
+        proadapter.filterList(filterdCategory);
+        if (filterdCategory.size() > 0) {
+            //Search Matched the item
+        } else {
+            //No Item in Search Query
+        }
+
     }
 
     @Override
@@ -180,7 +228,7 @@ public class productlist extends AppCompatActivity implements ProductDetailClick
                         prod1.setP_photo(productphoto);
                         products.add(prod1);
                     }
-                    productadapter proadapter= new productadapter(productlist.this,products);
+                     proadapter= new productadapter(productlist.this,products);
                     proadapter.setProductDetailClickListener(productlist.this);
                     rvproduct.setAdapter(proadapter);
                 }
