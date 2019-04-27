@@ -110,17 +110,16 @@
         android:textColorHint="#000000" />
 
                 <EditText
-                    android:id="@+id/etdate"
+                    android:layout_gravity="center"
                     android:layout_width="300dp"
                     android:layout_height="70dp"
-                    android:hint="Date Of Birth"
-                    android:layout_gravity="center"
-                    android:textColorHint="#000000"
-                    android:inputType="date"/>
+                    android:id="@+id/tvdate"
+                    android:textColor="@color/colorblack"
+                    android:text="D.O.B"
+                    android:editable="false"/>
 
 
-
-    <Button
+                <Button
         android:id="@+id/bsubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

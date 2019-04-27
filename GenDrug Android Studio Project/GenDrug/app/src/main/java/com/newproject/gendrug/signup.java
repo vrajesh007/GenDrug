@@ -1,5 +1,6 @@
 package com.newproject.gendrug;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.util.Patterns;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -30,14 +32,19 @@ import com.android.volley.toolbox.Volley;
 import com.newproject.gendrug.ApiHelper.JsonField;
 import com.newproject.gendrug.ApiHelper.WebURL;
 
+import org.w3c.dom.Text;
+
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
 public class signup extends AppCompatActivity implements View.OnClickListener {
-    EditText username,phonenumber,email,password,confirmpassword,address,dateofbirth;
+    EditText username,phonenumber,email,password,confirmpassword,address;
     RadioButton male,female;
     TextView gender;
+    EditText tvdate;
     Button submit;
+    DatePickerDialog datePickerDialog;
     private String selectedGender;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,12 +57,12 @@ public class signup extends AppCompatActivity implements View.OnClickListener {
         password =(EditText) findViewById(R.id.etpassword);
         confirmpassword =(EditText) findViewById(R.id.etcpassword);
         address =(EditText) findViewById(R.id.etaddress);
-        dateofbirth =(EditText) findViewById(R.id.etdate);
+        tvdate = (EditText) findViewById(R.id.tvdate);
         male =(RadioButton) findViewById(R.id.rbmale);
         female =(RadioButton) findViewById(R.id.rbfemale);
         submit =(Button) findViewById(R.id.bsubmit);
-
        submit.setOnClickListener(this);
+       tvdate.setOnClickListener(this);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
@@ -74,6 +81,22 @@ public class signup extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+            case R.id.tvdate:
+
+                        final Calendar c = Calendar.getInstance();
+                        int year= c.get(Calendar.YEAR);
+                        int month =c.get(Calendar.MONTH);
+                        int day=c.get(Calendar.DAY_OF_MONTH);
+                        datePickerDialog=new DatePickerDialog(signup.this, new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int month, int dayofMonth) {
+                                tvdate.setText(dayofMonth + "/" + (month + 1) + "/" + year);
+                            }
+                        }, year, month, day);
+                        datePickerDialog.show();
+
+
+                break;
             case R.id.bsubmit:
 
                 if (checkUserName() && checkGender() && checkMobileNumber() && checkEmail() && checkPassword() && checkcPassword())
@@ -97,6 +120,7 @@ public class signup extends AppCompatActivity implements View.OnClickListener {
                 }
 
                 break;
+
         }
 
     }
@@ -122,7 +146,7 @@ public class signup extends AppCompatActivity implements View.OnClickListener {
                 params.put(JsonField.KEY_USER_GENDER, selectedGender);
                 params.put(JsonField.KEY_USER_MOBILE_NUMBER, phonenumber.getText().toString());
                 params.put(JsonField.KEY_USER_PASSWORD, password.getText().toString());
-                params.put(JsonField.KEY_USER_DOB, dateofbirth.getText().toString());
+                params.put(JsonField.KEY_USER_DOB, tvdate.getText().toString());
                 params.put(JsonField.KEY_USER_ADDRESS, address.getText().toString());
                 return params;
             }

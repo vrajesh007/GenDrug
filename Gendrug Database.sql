@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2019 at 01:40 PM
+-- Generation Time: Apr 27, 2019 at 01:12 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -145,8 +145,8 @@ CREATE TABLE `medicinedetails` (
 --
 
 INSERT INTO `medicinedetails` (`P_id`, `P_name`, `P_details`, `P_category`, `P_price`, `P_stock`, `P_photo`, `Categ_id`, `Symp_id`) VALUES
-(1, 'Humstard 3', 'Insulin is a naturally occurring hormone made by the pancreas that helps our body use or store blood glucose (sugar) it gets from food. For people with diabetes, either the pancreas does not make enough insulin to meet the body\'s requirements, or the body cannot properly use the insulin that is made. As a result, glucose cannot be used or stored properly and accumulates in the bloodstream. Insulin injected under the skin helps to lower blood glucose levels.', 'Injection', 110, 50, 'upload/humstard.jpg', 1, 1),
-(2, 'AL TOTAL ', '1 AL Total Syrup is an antihistamine which works by blocking the action of histamine in the body. It is used for relieving symptoms of sinus pressure, sinus congestion, runny nose, itching of the throat and nose, watery eyes, and sneezing due to upper respiratory infections, hay fever and allergies.', 'Syrup', 45, 150, 'upload/1-Al-Total-syrup-1.png', 3, 6),
+(1, 'AL TOTAL ', '1 AL Total Syrup is an antihistamine which works by blocking the action of histamine in the body. It is used for relieving symptoms of sinus pressure, sinus congestion, runny nose, itching of the throat and nose, watery eyes, and sneezing due to upper respiratory infections, hay fever and allergies.', 'Syrup', 45, 150, 'upload/1-Al-Total-syrup-1.png', 3, 6),
+(2, 'Humstard 3', 'Insulin is a naturally occurring hormone made by the pancreas that helps our body use or store blood glucose (sugar) it gets from food. For people with diabetes, either the pancreas does not make enough insulin to meet the body\'s requirements, or the body cannot properly use the insulin that is made. As a result, glucose cannot be used or stored properly and accumulates in the bloodstream. Insulin injected under the skin helps to lower blood glucose levels.', 'Injection', 110, 50, 'upload/humstard.jpg', 1, 1),
 (3, 'FERCEE TR ', 'Fercee Tr Capsule is used for Iron deficiency anaemia, Anaemia, Spina bifida in an unborn fetus, Treatment of anemias of nutritional origin, Pregnancy, Infancy, Or childhood, Iron deficiency anemia, Treatment of megaloblastic anemias due to a deficiency of folic acid, Diarrhea, Wilson\'s disease, Acne, Age related vision loss and other conditions. Fercee Tr Capsule may also be used for purposes not listed in this medication guide.', 'Tablets', 14, 50, 'upload/fercee-tr-capsules-500x500.jpg', 4, 0),
 (4, 'TUSQ DX CO', 'Tusq Dx Syrup is an antihistamine which works by blocking the action of histamine in the body. It is used for relieving symptoms of sinus pressure, sinus congestion, runny nose, itching of the throat and nose, watery eyes, and sneezing due to upper respiratory infections, hay fever and allergies.\r\n\r\n', 'Syrup', 70, 50, 'upload/tusq-dx-liq-100ml-250x250.jpg', 3, 6),
 (5, 'AMLIP 2.5MG', 'Amlip 2.5 MG Tablet is used to treat high blood pressure and other heart complications. The medicine should be taken in conjunction with a proper diet and regular exercise. It is also used in managing chest pain.\r\n', 'Tablets', 7, 45, 'upload/050217-172838_AMLIP 2.5MG TABLET-Genericwala.com.jpg', 4, 7),
@@ -335,7 +335,9 @@ CREATE TABLE `tbl_cart` (
 --
 
 INSERT INTO `tbl_cart` (`cart_id`, `user_id`, `product_id`, `product_name`, `prodcut_description`, `product_image`, `product_amount`, `product_unit_price`, `product_qty`) VALUES
-(1, 1, 6, 'GEOFIT MEN', '\r\nGeofit Capsule is used for Leg pain due to blocked arteries, Chest pain, High blood pressure, Tissue repairing, Rapid weight loss, Heart attack, Biotin deficiency, Skin and hair growth, Weak nails, Healthy nervous system and bone marrow maintenance and other conditions. Geofit Capsule may also be used for purposes not listed in this medication guide', 'upload/050217-163306_Geofit-Men12.jpg', '3420.00', '45.00', 76);
+(1, 1, 6, 'GEOFIT MEN', '\r\nGeofit Capsule is used for Leg pain due to blocked arteries, Chest pain, High blood pressure, Tissue repairing, Rapid weight loss, Heart attack, Biotin deficiency, Skin and hair growth, Weak nails, Healthy nervous system and bone marrow maintenance and other conditions. Geofit Capsule may also be used for purposes not listed in this medication guide', 'upload/050217-163306_Geofit-Men12.jpg', '3420.00', '45.00', 76),
+(2, 1, 15, ' BIOCHEMDR', '\r\nIt is essentially an organic compound that can be used as an additive in many drugs to relieve excessive coughing and sore throat. It is known to be a muscle relaxant, has cooling properties and helps to reduce spasms. Additionally, it is also used as an analgesic to treat problems like headaches, sprains and other such minor pains.', 'upload/images.jpg', '105.00', '21.00', 5),
+(3, 1, 17, 'BREATHWELL', 'Easi Breathe Capsule is used for Warts, Asthma, Blockage in nasal passages, Cough, Back pain, Pain and other conditions. Easi Breathe Capsule may also be used for purposes not listed in this medication guide. ... Affecting the signals in the brain that trigger cough reflex.', 'upload/easi-breathe-softgel-capsules-500x500.png', '30.00', '6.00', 5);
 
 -- --------------------------------------------------------
 
@@ -446,7 +448,9 @@ CREATE TABLE `userregistration` (
 INSERT INTO `userregistration` (`U_id`, `U_name`, `Gender`, `DOB`, `Phonenum`, `Email`, `Password`, `Conpassword`, `Address`) VALUES
 (1, 'Vrajesh Trivedi', 'Male', '1997-08-25', '9409288425', 'trivedi.vrajesh007@gmail.com', '321', '9409288425', '15, Government servant society, Opposite Municipal Market, C.G road.'),
 (2, 'Atul Jose', 'male', '29/01/1998', '9537914451', 'atuljose123@gmail.com', '12345', '123456789', 'Sabarmati'),
-(3, 'Monish', 'Male', '12/02/1998', '9111112354', 'monishboy@gmail.com', 'goku@1234', '', 'Motera');
+(3, 'Monish', 'Male', '12/02/1998', '9111112354', 'monishboy@gmail.com', 'goku@1234', '', 'Motera'),
+(4, 'paritosh', 'Male', '25/4/2019', '9874565478', 'paritosh@gmail.com', '12345', '', 'ahmedabad'),
+(5, 'ramya', 'Male', '17/3/1998', '1234567890', 'r4my4.17@gmail.com', '1234', '', 'vasna');
 
 --
 -- Indexes for dumped tables
@@ -652,7 +656,7 @@ ALTER TABLE `symptomdetails`
 -- AUTO_INCREMENT for table `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_order_details`
@@ -670,7 +674,7 @@ ALTER TABLE `tbl_order_master`
 -- AUTO_INCREMENT for table `userregistration`
 --
 ALTER TABLE `userregistration`
-  MODIFY `U_id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `U_id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
